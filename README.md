@@ -231,7 +231,11 @@ Every component has, at minimum, a return. It generates a **Virtual DOM** node t
 ##### `export default Hello`
 This exposes the Hello class to other files which import from the App.js file. The `default` keyword means that any import that's name doesn't match a named export will automatically revert to this. Only one default is allowed per file.
 
-### JSX
+### Quick Recap
+
+![](https://media2.giphy.com/media/ekvi8AacTWOuw5hHLS/giphy.gif)
+
+## JSX
 
 > Hey you got your html in my javascript!
 >
@@ -294,7 +298,13 @@ ReactDOM.render(
 
 ---
 
-### Hello World: A Little Dynamic
+### Review Questions
+- How does JSX make your life as a developer easier?
+- What are some of the advantages of having a virtual DOM?
+
+
+
+## Hello World: A Little Dynamic
 
 Our `Hello` component isn't too helpful. Let's make it more interesting.
 * Rather than simply display "Hello world", let's display a greeting to the user.
@@ -325,7 +335,7 @@ function Hello(props) {
 
 In the above example, we replaced "world" with `{props.name}`.
 
-#### What are `.props`?
+### What are `.props`?
 
 Properties! Every component has `.props`
 * Properties are immutable. That is, they cannot be changed while your program is running.
