@@ -394,7 +394,7 @@ If you finish early, try experimenting with CSS (Make Sure you use `className` i
 *Post.js*
 
 ```
-import Comment from './Comment';
+import React from 'react';
 
 function Post(props) {
 	return(
@@ -409,6 +409,8 @@ function Post(props) {
         </div>
     )
 }
+
+export default Post;
 ```
 
 *index.js*
@@ -457,7 +459,7 @@ Let's create a new file for our Comment component, `src/Comment.js`...
 ```js
 import React from 'react';
 
-const comment = (props) => {
+const Comment = (props) => {
     return(
         <div>
             <p>{props.message}</p>
@@ -465,7 +467,7 @@ const comment = (props) => {
     )
 }
 
-export default comment;
+export default Comment;
 ```
 
 Then in `src/Post.js`, we need to load in our `Comment` component and render it inside of our `Post` component...
