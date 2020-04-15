@@ -43,6 +43,7 @@ The first thing most people hear about React is "Facebook uses it."
 <img src='https://lh4.googleusercontent.com/lNCcVZlrC08vdkMrMZ8XCGjD5a3w8yUybFm2YN7VJJzOttmEl99lR_bXcW21hw7AVtKDRvQajA4AsqJHVHqzhHnkNsVmMRXMvi9uuoV3iIU5gIJjSSkUee8fpg' alt='2011 facebook' width='600px'>
 
 *2020*
+
 <img src="https://cdn.vox-cdn.com/uploads/chorus_asset/file/19819048/News_Feed.jpg" alt="2020 facebook" width="600px"> 
 
 React was born out of Facebook's frustration with the traditional MVC model and how..
