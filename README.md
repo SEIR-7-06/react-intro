@@ -156,12 +156,12 @@ It uses Webpack which is a build tool that enables many of the features listed a
 You can also set up all this yourself, but for now `create-react-app` allows us to worry more about our code and less about configuration.
 
 ```bash
-$ npm i -g create-react-app
-$ create-react-app blog-app
-$ cd blog-app
-$ code .
+$ npx create-react-app my-app
+$ cd my-app
 $ npm start
 ```
+
+> We're using `npx` instead of `npm` here and you might be wondering why. `create-react-app` is updated often and using `npx` ensures that we take advantage of the most recent version. This also allows us to run `create-react-app` without installing anything to our machines!
 
 > Here you will begin setting up a blog app that you will continue working on during this lesson's exercises. For demonstration purposes, We will be creating a simple "hello world" app.
 
