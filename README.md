@@ -16,7 +16,7 @@
 - A framework is software providing generic functionality and structure that serves as foundation to build and deploy applications.
 - Express is a framework that runs on the server, receiving incoming request from the client, preforming some work that you have defined, and returning some response to the client.  Front-end frameworks run in the client's browser, receive input from interactions with the page, perform some work that you have defined, and make any updates necessary.
 - Frameworks can help standardize code, give you additional functionality and performance, and can help get your code off the ground faster.  
-- There are [many](https://2018.stateofjs.com/front-end-frameworks/overview/) front end frameworks and each go about solving problems of how state is managed, updated, and represented by a view but there are many commonalities.
+- There are [many](https://2019.stateofjs.com/overview/) front end frameworks and each go about solving problems of how state is managed, updated, and represented by a view but there are many commonalities.
 - There is a lot of debate over whether frontend frameworks count as frameworks at all -- some people say that they are just libraries and should be referred to as such.
 
 ### What is ReactJS?
@@ -36,11 +36,15 @@ The first thing most people hear about React is "Facebook uses it."
 
 *2008*
 
-<img src='https://lh3.googleusercontent.com/d4ypmybEZT8SAOj1efmy9CCkKwNG3Dd-Mv0__FoIsWgK0iWuYWBS4NPHOf71ANpKcx2ElOndGeiDInxm8p-sOMqNXBkPy3y-HsH45lGscqJepxFOYkU1_6BbAw' alt='old facebook' width='400px'>
+<img src='https://lh3.googleusercontent.com/d4ypmybEZT8SAOj1efmy9CCkKwNG3Dd-Mv0__FoIsWgK0iWuYWBS4NPHOf71ANpKcx2ElOndGeiDInxm8p-sOMqNXBkPy3y-HsH45lGscqJepxFOYkU1_6BbAw' alt='2008 facebook' width='600px'>
 
 *2011*
 
-<img src='https://lh4.googleusercontent.com/lNCcVZlrC08vdkMrMZ8XCGjD5a3w8yUybFm2YN7VJJzOttmEl99lR_bXcW21hw7AVtKDRvQajA4AsqJHVHqzhHnkNsVmMRXMvi9uuoV3iIU5gIJjSSkUee8fpg' alt='old facebook' width='400px'>
+<img src='https://lh4.googleusercontent.com/lNCcVZlrC08vdkMrMZ8XCGjD5a3w8yUybFm2YN7VJJzOttmEl99lR_bXcW21hw7AVtKDRvQajA4AsqJHVHqzhHnkNsVmMRXMvi9uuoV3iIU5gIJjSSkUee8fpg' alt='2011 facebook' width='600px'>
+
+*2020*
+
+<img src="https://cdn.vox-cdn.com/uploads/chorus_asset/file/19819048/News_Feed.jpg" alt="2020 facebook" width="600px"> 
 
 React was born out of Facebook's frustration with the traditional MVC model and how..
   * Re-rendering something meant re-rendering everything (or just a lot).
@@ -152,12 +156,12 @@ It uses Webpack which is a build tool that enables many of the features listed a
 You can also set up all this yourself, but for now `create-react-app` allows us to worry more about our code and less about configuration.
 
 ```bash
-$ npm i -g create-react-app
-$ create-react-app blog-app
-$ cd blog-app
-$ code .
+$ npx create-react-app my-app
+$ cd my-app
 $ npm start
 ```
+
+> We're using `npx` instead of `npm` here and you might be wondering why. `create-react-app` is updated often and using `npx` ensures that we take advantage of the most recent version. This also allows us to run `create-react-app` without installing anything to our machines!
 
 > Here you will begin setting up a blog app that you will continue working on during this lesson's exercises. For demonstration purposes, We will be creating a simple "hello world" app.
 
@@ -390,7 +394,7 @@ If you finish early, try experimenting with CSS (Make Sure you use `className` i
 *Post.js*
 
 ```
-import Comment from './Comment';
+import React from 'react';
 
 function Post(props) {
 	return(
@@ -405,6 +409,8 @@ function Post(props) {
         </div>
     )
 }
+
+export default Post;
 ```
 
 *index.js*
@@ -453,7 +459,7 @@ Let's create a new file for our Comment component, `src/Comment.js`...
 ```js
 import React from 'react';
 
-const comment = (props) => {
+const Comment = (props) => {
     return(
         <div>
             <p>{props.message}</p>
@@ -461,7 +467,7 @@ const comment = (props) => {
     )
 }
 
-export default comment;
+export default Comment;
 ```
 
 Then in `src/Post.js`, we need to load in our `Comment` component and render it inside of our `Post` component...
