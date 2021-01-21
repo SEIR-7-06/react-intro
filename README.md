@@ -249,7 +249,7 @@ This exposes the Hello class to other files which import from the App.js file. T
 
 Let's talk about the value that the render method returns. It looks an awful lot like an HTML heading, but it's not. We often write out React components in JSX.
 
-JSX is [a language that compiles to Javascipt](http://blog.yld.io/2015/06/10/getting-started-with-react-and-node-js/#.V8eDk5MrJPN) that allows us to write code that strongly resembles HTML. It is eventually compiled to lightweight JavaScript objects.
+JSX is [a language that compiles to Javascipt](https://reactjs.org/docs/introducing-jsx.html) that allows us to write code that strongly resembles HTML. It is eventually compiled to lightweight JavaScript objects.
 
 Your Hello function:
 
