@@ -19,16 +19,16 @@
 - There are [many front end frameworks](https://2020.stateofjs.com/en-US/technologies/front-end-frameworks/)  and each go about solving problems of how state is managed, updated, and represented by a view but there are many commonalities.
 - There is a lot of debate over whether frontend frameworks count as frameworks at all -- some people say that they are just libraries and should be referred to as such. -->
 
-### What is ReactJS?
+### What is React and Why do popele like it?
 React is a JavaScript library for building interactive user interfaces.
 
-As your the front end of your application becomes larger and more complex, trying to manage that complexity with vanilla JavaScript or even jQuery becomes difficult.
+As the the front end of your application becomes larger and more complex, trying to manage that complexity with vanilla JavaScript or even jQuery becomes difficult.
 
-React provides powerful tools for managing that complexity. With React, the user interface is broken out into reusable building blocks called components. Each component can house its own logic, manage its own state, and pass information to other components.
+React provides powerful tools for managing that complexity. With React, the user interface is broken out into reusable building blocks called **components**. Each component can house its own logic, manage its own state, and pass information to other **components**.
 
 React also performs very efficiently in the browser. If we think back to using server-side templates in the previous units, whenever we wanted to update the data on the page, we needed to refresh the entire page to see our changes. We could improve this with jQuery by only rerendering part of the page.
 
-React takes this efficiency even further, using something called the virtual DOM, we can rerender only the exact parts of the page that need to be rerendered and nothing more. What is even more beautiful is React handles all of this behind the scenes without us having to manage it.
+React takes this efficiency even further, using something called the **Virtual DOM**, we can rerender only the exact parts of the page that need to be rerendered and nothing more. What is even more beautiful is React handles all of this behind the scenes without us having to manage it.
 
 <!-- > **Selling Point:** By modeling small compatible components that focus on just rendering a view, we can move business logic out of the DOM, and therefore improve our app's performance, maintainability, modularity and readability. -->
 
@@ -60,26 +60,20 @@ If you want to get a taste of what React is all about, [here's an introduction f
 
 ### React in MVC
 
-React can be thought of as the "Views" layer in MVC.
+React can be thought of as the "Views" layer in MVC, the part that the user will view and interact with.
 
-React will work with any back-end language, but for React project and in our in-class examples we will be using Mongoose and Express for the models and controllers.
-
-<details>
-  <summary><strong>What is the role of a "view" in a front-end Javascript application?</strong></summary>
-  The visual template the user sees, often populated with data from our models.
-</details>
+React will work with any back-end language, but for our in-class examples we will be using Mongoose and Express for the models and controllers.
 
 ## Components
 
-In a traditional front end separation of concerns, we would have our markup (HTML) in one file and our logic (JavaScript) in another file. React strays from this concept mixing markup and logic in the same file, instead following a **component-based** separation of concerns.
+In a traditional front end separation of concerns, we would have our markup (HTML) in one file and our logic (JavaScript) in another file. React strays from this concept mixing markup and logic in the same file, and instead separates concerns by **components**.
 
 ### What is a Component
 
 A component is a reusable chunk of UI, housing both the markup and the logic for that particular piece of user interface.
 
-Looking at Facebook, you could think of each status post as a component. You could think of the status feed as a component that contains many of the smaller status post components within. You could take that one step further and think of the Facebook app, as one giant component with several components within it, including the friends list, the header, etc...
+Looking at Facebook, you could think of each status post as a **component**. You could think of the status feed as a component that contains many of the smaller status post components within. You could take that one step further and think of the Facebook app, as one giant component with several components within it, including the friends list, the header, etc...
 
-Imagine you worked at Facebook when they wanted to shift from using likes to reactions. Using traditional JavaScript, HTML, and CSS the shift would make you have to change your code in a bunch of places. Component based architecture allows us to make that change efficiently in one place.
 <!-- 
 [Templates vs Components](https://wanderoak.co/fixed-templates-vs-components/)
 
