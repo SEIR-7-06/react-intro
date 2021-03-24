@@ -4,26 +4,33 @@
 
 ## Learning Objectives
 
-* Explain what a frontend framework is and why they can be helpful in writing more complex applications.
+<!-- * Explain what a frontend framework is and why they can be helpful in writing more complex applications.
 * Explain what ReactJS is and where it fits in our applications' stack.
 * Explain the component model of web development.
-* Create and return React components in the browser.
+* Create and return React components in the browser. -->
 
 ## Framing
 
-### What is a Frontend Framework? 
+<!-- ### What is a Frontend Framework? 
 
 - A framework is software providing generic functionality and structure that serves as foundation to build and deploy applications.
 - Express is a framework that runs on the server, receiving incoming request from the client, preforming some work that you have defined, and returning some response to the client.  Front-end frameworks run in the client's browser, receive input from interactions with the page, perform some work that you have defined, and make any updates necessary.
 - Frameworks can help standardize code, give you additional functionality and performance, and can help get your code off the ground faster.  
 - There are [many front end frameworks](https://2020.stateofjs.com/en-US/technologies/front-end-frameworks/)  and each go about solving problems of how state is managed, updated, and represented by a view but there are many commonalities.
-- There is a lot of debate over whether frontend frameworks count as frameworks at all -- some people say that they are just libraries and should be referred to as such.
+- There is a lot of debate over whether frontend frameworks count as frameworks at all -- some people say that they are just libraries and should be referred to as such. -->
 
 ### What is ReactJS?
+React is a JavaScript library for building interactive user interfaces.
 
-React is a JavaScript library used to craft modern day UI and views for the front-end in web applications.
+As your the front end of your application becomes larger and more complex, trying to manage that complexity with vanilla JavaScript or even jQuery becomes difficult.
 
-> **Selling Point:** By modeling small compatible components that focus on just rendering a view, we can move business logic out of the DOM, and therefore improve our app's performance, maintainability, modularity and readability.
+React provides powerful tools for managing that complexity. With React, the user interface is broken out into reusable building blocks called components. Each component can house its own logic, manage its own state, and pass information to other components.
+
+React also performs very efficiently in the browser. If we think back to using server-side templates in the previous units, whenever we wanted to update the data on the page, we needed to refresh the entire page to see our changes. We could improve this with jQuery by only rerendering part of the page.
+
+React takes this efficiency even further, using something called the virtual DOM, we can rerender only the exact parts of the page that need to be rerendered and nothing more. What is even more beautiful is React handles all of this behind the scenes without us having to manage it.
+
+<!-- > **Selling Point:** By modeling small compatible components that focus on just rendering a view, we can move business logic out of the DOM, and therefore improve our app's performance, maintainability, modularity and readability. -->
 
 #### Some History
 
@@ -38,15 +45,11 @@ The first thing most people hear about React is "Facebook uses it."
 
 <img src='https://lh3.googleusercontent.com/d4ypmybEZT8SAOj1efmy9CCkKwNG3Dd-Mv0__FoIsWgK0iWuYWBS4NPHOf71ANpKcx2ElOndGeiDInxm8p-sOMqNXBkPy3y-HsH45lGscqJepxFOYkU1_6BbAw' alt='2008 facebook' width='600px'>
 
-*2011*
-
-<img src='https://lh4.googleusercontent.com/lNCcVZlrC08vdkMrMZ8XCGjD5a3w8yUybFm2YN7VJJzOttmEl99lR_bXcW21hw7AVtKDRvQajA4AsqJHVHqzhHnkNsVmMRXMvi9uuoV3iIU5gIJjSSkUee8fpg' alt='2011 facebook' width='600px'>
-
 *2020*
 
 <img src="https://cdn.vox-cdn.com/uploads/chorus_asset/file/19819048/News_Feed.jpg" alt="2020 facebook" width="600px"> 
 
-React was born out of Facebook's frustration with the traditional MVC model and how..
+React was born out of Facebook's frustration with the traditional MVC model and how...
   * Re-rendering something meant re-rendering everything (or just a lot).
   * That had negative implications on processing power and ultimately user experience, which at times became glitchy and laggy.
 
@@ -57,7 +60,7 @@ If you want to get a taste of what React is all about, [here's an introduction f
 
 ### React in MVC
 
-React can be thought of as the "Views" layer.
+React can be thought of as the "Views" layer in MVC.
 
 React will work with any back-end language, but for React project and in our in-class examples we will be using Mongoose and Express for the models and controllers.
 
@@ -68,17 +71,24 @@ React will work with any back-end language, but for React project and in our in-
 
 ## Components
 
-One comment made about React when it was first open sourced was "Rethinking established best practices" which kind of became the React motto.  In React, we want to move away from template pages, away from separating code based purely on file type, and more towards a **component-based** separation of concerns.  [Templates vs Components](https://wanderoak.co/fixed-templates-vs-components/)
+In a traditional front end separation of concerns, we would have our markup (HTML) in one file and our logic (JavaScript) in another file. React strays from this concept mixing markup and logic in the same file, instead following a **component-based** separation of concerns.
+
+### What is a Component
+
+A component is a reusable chunk of UI, housing both the markup and the logic for that particular piece of user interface.
+
+Looking at Facebook, you could think of each status post as a component. You could think of the status feed as a component that contains many of the smaller status post components within. You could take that one step further and think of the Facebook app, as one giant component with several components within it, including the friends list, the header, etc...
+
+Imagine you worked at Facebook when they wanted to shift from using likes to reactions. Using traditional JavaScript, HTML, and CSS the shift would make you have to change your code in a bunch of places. Component based architecture allows us to make that change efficiently in one place.
+<!-- 
+[Templates vs Components](https://wanderoak.co/fixed-templates-vs-components/)
 
 ![Templates Page](images/templates-page.png)
 ![Components Page](images/components-page.png)
-> [WanderOak - Fixed Templates vs. Components](https://wanderoak.co/fixed-templates-vs-components/)
+> [WanderOak - Fixed Templates vs. Components](https://wanderoak.co/fixed-templates-vs-components/) -->
 
-When taking a look at Facebook, you could think of each status post as a mini-component in React. And a list of those updates, is a component that contains several of those mini-components. You could take that one step further and think of the Facebook app, as one giant component with several components within it. (Things like the list of status updates, the friends list, the header, etc...)
-
-Imagine you worked at Facebook when they wanted to shift from using likes to reactions. Using traditional JavaScript, HTML, and CSS the shift would make you have to change your code in a bunch of places. Component based architecture allows us to maintain our code more easily.
-
-### Let's together identify the components 
+### Exercise
+Let's see if we can identify the components in the Tube Tracker app below.
 
 ![Wireframe](images/wireframe.png)
 ![Wireframe with components](images/wireframe_deconstructed.png)
@@ -94,49 +104,11 @@ Notice the structure of how the various components are nested.
             - Trains
 ```
 
-TubeTracker contains the application
-Network displays each line on the network
-Line displays the stations on a line
-Predictions controls the state of the departure board
-DepartureBoard displays the current station and platforms
-Trains displays the trains due to arrive at a platform
-
-### [F.I.R.S.T. Components](https://addyosmani.com/first/)
-
-A React component is built to expect an input and render a UI with it. More importantly, a well-structured component only receives data specific to its purpose.
-
-This is because React follows a more **functional** approach to programming. For React components under this approach, **the same input will always produce the same output**.
-
-Best practice is that React components follow the **F.I.R.S.T.** guidelines
-
-#### Focused
-
-Components should do one thing and do it well.
-
-#### Independent
-
-Components should increase cohesion and reduce coupling. Behavior in one component should not impact the behavior of another. In other words, components should not rely on one another.
-
-> But they should compliment one another.
-
-#### Reusable
-
-Components should be written in a way that reduces the duplication of code.
-
-#### Small
-
-Ideally, components should be short and condensed.
-
-#### Testable
-
-Because the same input will always produce the same output, components are easily unit testable.
-
-> If you're interested, [Jest](https://facebook.github.io/jest/docs/tutorial-react.html) is a popular testing library for React.
-
+We can say that the entire Tube Tracker app is a component containing both the Network component and the Predictions component. We say that the Network and Predictions components are child components of the TubeTracker component and the TubeTracker component is a parent of the Network and the Predictions components. This parent/child relationship creates a tree-like structure which will become important to us later on.
 
 ## Exercise: Identifying Components
 
-* Break into groups of three and take a look at Facebook, Craigslist, Ebay, or a website of your choice. Identify the visual "components" the website is comprised of. Use markers to draw these out on the wall.
+* Break into groups of three and take a look at a website of your choice (Facebook, Craigslist, Ebay, etc...). Identify the visual "components" the website is comprised of.
 
 As you're drawing this out, think about the following questions...
 * Where do you see "nested components"? Where do you not?
@@ -147,27 +119,28 @@ As you're drawing this out, think about the following questions...
 
 ## Code Along: Initial Setup
 
-In order to create a new project and to get our development environment setup, we are going to use the Terminal command `create-react-app`. It will create a new folder in your current directory for the in-class application.
+In order to create a new project and get our development environment setup, we are going to use the Terminal command `create-react-app`.
 
-`create-react-app` is an NPM package also built by Facebook that writes our build dependencies for us so that we can do less configuration. It allows us to use React, JSX, and ES6. It also allows us to import our CSS, it autoprefixes our CSS so that we don't have to worry about cross browser compatibility, it gives us a dev server to run, and it enables hot reloading which updates the code in our browser without us refreshing the page.
+`create-react-app` is an NPM package that will handle the details of setting up a React project for us. It will install the necessary dependancies, and set up a server to serve our front end files to the browser. It will also watch our files for any changes and automatically update the browser when we save a file, also called "hot reloading".
 
-It uses Webpack which is a build tool that enables many of the features listed above. It also includes Babel which transpiles our JavaScript from ES6 to be compatible with older browsers. It also includes Autoprefixer for CSS compatibility, ESLint for linting, and Jest for testing.
+<!-- that writes our build dependencies for us so that we can do less configuration. It allows us to use React, JSX, and ES6. It also allows us to import our CSS, it autoprefixes our CSS so that we don't have to worry about cross browser compatibility, it gives us a dev server to run, and it enables hot reloading which updates the code in our browser without us refreshing the page.
 
-You can also set up all this yourself, but for now `create-react-app` allows us to worry more about our code and less about configuration.
+It uses Webpack which is a build tool that enables many of the features listed above. It also includes Babel which transpiles our JavaScript from ES6 to be compatible with older browsers. It also includes Autoprefixer for CSS compatibility, ESLint for linting, and Jest for testing. -->
 
+<!-- You can also set up all this yourself, but for now `create-react-app` allows us to worry more about our code and less about configuration. -->
+
+It is possible to set up a React environment yourself, however for now `create-react-app` allows us to focus on building with React and not worry about configuration.
+
+Navigate to your React directory and run...
 ```bash
 $ npx create-react-app my-app
 $ cd my-app
 $ npm start
 ```
 
-> We're using `npx` instead of `npm` here and you might be wondering why. `create-react-app` is updated often and using `npx` ensures that we take advantage of the most recent version. This also allows us to run `create-react-app` without installing anything to our machines!
+We're using `npx` instead of `npm` here. `npx` allows us to run `create-react-app` without downloading the `create-react-app` package to our machines. `npx` allows us to run a hosted version of the package instead.
 
-> Here you will begin setting up a blog app that you will continue working on during this lesson's exercises. For demonstration purposes, We will be creating a simple "hello world" app.
-
-After running `$ npm start`, we can view the app at `http://localhost:3000`
-
-`create-react-app` provides us with all the necessary tools and configuration necessary to start writing React. `npm start` refers to an included script that starts up the development server.
+`create-react-app` will create a new directory for our React project. In this example we called it "my-app". Once you have navigated into the directory for your new React project run `$ npm start` to start up the server. We'll want to keep this server running while we are working on our app. You can now view your React app at `http://localhost:3000`! Take a look.
 
 Along with installing the necessary dependencies, it creates an initial app skeleton that looks like this...
 
@@ -177,47 +150,120 @@ Along with installing the necessary dependencies, it creates an initial app skel
 ├──  index.html
 ├──  node_modules
 ├──  package.json
+├──  public
+│     └──index.html
 └──  src
-    ├──  App.css
-    ├──  App.js
-    ├──  index.css
-    ├──  index.js
-    └──  logo.svg
+      ├──  App.css
+      ├──  App.js
+      ├──  index.css
+      ├──  index.js
+      └──  logo.svg
 ```
 
-Most of the important files, which are primarily the ones where we will be working today, are in the `/src` directory.
+Take some time and look at what's been generated. Specifically look at `index.html`, `index.js`, and `App.js`.
 
-Take some time and look at what's been generated. Specifically look in `App.js` and `index.js`
+### index.html
 
+To render our React app on the page, our journey starts at the `/public/index.html` file.
 
-### We Do: Hello World - A Very Basic Component
+When the browser first loads our app, the first thing to be loaded is this HTML file. We'll see a lot of comments in here explaining various parts of the file. For now, let's focus on the div in the body tag with the id of "root".
+
+```html
+<body>
+  <div id="root"></div>
+</body>
+```
+
+When our HTML file first loads on the page, some JavaScript will run behind the scenes to append our entire React application to this div with an id of "root".
+
+### index.js
+
+Let's take a looks inside `/src/index.js`. Notice the call to `ReactDOM.render()`.
+
+```javascript
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+```
+
+This function call takes two arguments, the component we want to render, and the element on the page that we want to render our component to. This code will take our `<App />` component and render it on the page to the element with the id of "root".
+
+Notice that before we render our `<App />` component to the page, we import it from another file, `./App.js`.
+
+```javascript
+import App from './App';
+```
+
+### App.js and JSX
+
+Let's take a look inside `./src/App.js`.
+
+```javascript
+function App() {
+  return (
+    <div className="App">
+      <h1>Some markup</h1>
+    </div>
+  );
+}
+```
+
+Here we define a function, `App` that simply returns some markup. Pull up your React app in the browser side by side with this file and you'll notice that the markup up here is what is being rendered to the page. Play with it. Change the markup in the return statement, save the file, and watch the rendered outpage change as well.
+
+This App function is a **React component**. Here in our `./src/App.js` we are defining our React component just as we would define a function. Our function definition includes a set of parentheses where we can pass parameters and has a return statement just like any old function.
+
+You'll notice something funny about this function. We are not returning regular JavaScript. Instead we are returning markup, something that looks an aweful lot like HTML. This HTML-like syntax is called **JSX**. Behind the scenes our `create-react-app` setup will convert this **JSX** code into regular old JavaScript before sending it to the browser.
+
+<details>
+  <summary>Hungry for More</summary>
+
+  Behind the scenes our `create-react-app` setup is using a tool called "Webpack", which is using another tool called "Babel" to "transpile" this **JSX** into vanilla JavaScript and regular React code before bundling it up and sending it off to the browser.
+
+  [Try it out yourself!](https://babeljs.io/repl)
+
+  Using Babel's REPL you can define a component with React that returns JSX, and see what Babel will "transpile" your component into. It converts it into vanilla JavaScript and into JavaScript code written with the React library. Notice the function call to `React.createElement()`. Notice how this function is taking as arguments, the name of the element to be created, any HTML attributes attached to the element, and possibly another call to `React.createElement()` to render out the child elements of the parent.
+
+  It is possible to write your React components this way by calling `React.createElement()`. However most developers agree using JSX is more intuitive and we'll be using JSX in this course.
+
+  ### More about Babel
+  Babel is a tool that can convert newer versions of JavaScript into a version of JavaScript widely supported by browsers. For example, ES12 => ES5.
+
+  Babel can also be used to convert **JSX** into vanilla JavaScript and React code.
+
+  ### What is Webpack?
+  Webpack is a module bundler that can be configured to do all sorts of things in order to prepare our front end code into code that is ready to be sent to and read by a browser. For our uses, Webpack will take all of our React and JavaScript code, convert it into vanilla JavaScript, bundle it into a single JavaScript file, and then append it in a script tag to our `index.html` file. We can actually find this script tag by opening up the elements panel with our React app open.
+
+</details>
+
+## Code Along Activity
 
 The basic unit you'll be working with in ReactJS is a **component**.
 
-* Components can be thought of as functional elements that take in data and as a result, produce a dynamic UI.
+* A Components can be thought of as a function that take in data and returns markup.
 
-Throughout class we have separated HTML, CSS and Javascript.
+<!-- Throughout class we have separated HTML, CSS and Javascript.
 * With components, the lines between those three become a bit blurry.
-* Instead, we organize our web apps according to small, reusable components that define their own content, presentation and behavior.  
+* Instead, we organize our web apps according to small, reusable components that define their own content, presentation and behavior. -->
 
-What does a component look like? Let's start with a simple "Hello World" example...
+<!-- What does a component look like? Let's start with a simple "Hello World" example... -->
 
-To start, in our `/src/App.js` file, let's remove the contents and in its place add this component definition...
+In our `/src/App.js` file, let's remove the contents and in its place add this component definition...
 
 ```js
 // bring in React from React
 import React from 'react'
 
-// define our Hello functional component
-function Hello() {
-// what should the component return
+// Here we define our Person component
+function Person() {
   return (
-  // Make sure to return some UI
-    <h1>Hello World!</h1>
+    <h1>Tigger</h1>
   );
 }
 
-export default Hello
+export default Person
 ```
 
 Let's break down the things we see here...
