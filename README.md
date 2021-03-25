@@ -64,11 +64,11 @@ React can be thought of as the "Views" layer in MVC, the part that the user will
 
 React will work with any back-end language, but for our in-class examples we will be using Mongoose and Express for the models and controllers.
 
-## Components
+## A Break from Convention
 
 In a traditional front end separation of concerns, we would have our markup (HTML) in one file and our logic (JavaScript) in another file. React strays from this concept mixing markup and logic in the same file, and instead separates concerns by **components**.
 
-### What is a Component
+### What is a Component?
 
 A component is a reusable chunk of UI, housing both the markup and the logic for that particular piece of user interface.
 
@@ -183,6 +183,12 @@ ReactDOM.render(
 );
 ```
 
+<details>
+  <summary>What is strict mode?</summary>
+
+  The [StrictMode](https://reactjs.org/docs/strict-mode.html) component wrapping our app will perform additional checks and warnings, highlighting potential bugs or misuses or the React library.
+</details>
+
 This function call takes two arguments, the component we want to render, and the element on the page that we want to render our component to. This code will take our `<App />` component and render it on the page to the element with the id of "root".
 
 Notice that before we render our `<App />` component to the page, we import it from another file, `./App.js`.
@@ -191,7 +197,7 @@ Notice that before we render our `<App />` component to the page, we import it f
 import App from './App';
 ```
 
-### App.js and JSX
+### App.js
 
 Let's take a look inside `./src/App.js`.
 
@@ -207,9 +213,22 @@ function App() {
 
 Here we define a function, `App` that simply returns some markup. Pull up your React app in the browser side by side with this file and you'll notice that the markup up here is what is being rendered to the page. Play with it. Change the markup in the return statement, save the file, and watch the rendered outpage change as well.
 
-This App function is a **React component**. Here in our `./src/App.js` we are defining our React component just as we would define a function. Our function definition includes a set of parentheses where we can pass parameters and has a return statement just like any old function.
+### Components
 
-You'll notice something funny about this function. We are not returning regular JavaScript. Instead we are returning markup, something that looks an aweful lot like HTML. This HTML-like syntax is called **JSX**. Behind the scenes our `create-react-app` setup will convert this **JSX** code into regular old JavaScript before sending it to the browser.
+This App function is a **React component**. Here in our `./src/App.js` file we are defining our React component just as we would define a function. Just like any other function in JavaScript we can pass parameters in the parentheses `()` and our function has a return statement.
+
+
+### JSX
+
+You'll notice something funny about this function. We are not returning regular JavaScript. Instead we are returning markup, something that looks an aweful lot like HTML. This HTML-like syntax is called [**JSX**](https://reactjs.org/docs/introducing-jsx.html).
+
+Behind the scenes our `create-react-app` setup will convert this **JSX** code into regular old JavaScript before sending it to the browser. By using **JSX** we can write code that strongly resembles HTML, a language we are already familiar with, and is easy to read and write.
+
+### Rendering a Component
+
+Now that we've defined our **React component** (function) we can render it to the page with this syntax, `<App />`, just like we do in our `./src/index.js` file. When we write `<App />` we are simply calling the `App` function defined in `./src/App.js`.
+
+Notice that we are also exporting our `App` component. In order to import `App` in our `./src/index.js` file we must first export it from `./src/App.js`.
 
 <details>
   <summary>Hungry for More</summary>
@@ -229,14 +248,11 @@ You'll notice something funny about this function. We are not returning regular 
 
   ### What is Webpack?
   Webpack is a module bundler that can be configured to do all sorts of things in order to prepare our front end code into code that is ready to be sent to and read by a browser. For our uses, Webpack will take all of our React and JavaScript code, convert it into vanilla JavaScript, bundle it into a single JavaScript file, and then append it in a script tag to our `index.html` file. We can actually find this script tag by opening up the elements panel with our React app open.
-
 </details>
 
-## Code Along Activity
+At this point, take another look at the three files we've seen so far, `/public/index.html`, `/src/index.js`, and `/src/App.js`. See if you can trace the path that eventually leads to our `App` component rendering to the page.
 
-The basic unit you'll be working with in ReactJS is a **component**.
-
-* A Components can be thought of as a function that take in data and returns markup.
+## Code Along: Let's Code
 
 <!-- Throughout class we have separated HTML, CSS and Javascript.
 * With components, the lines between those three become a bit blurry.
@@ -244,54 +260,30 @@ The basic unit you'll be working with in ReactJS is a **component**.
 
 <!-- What does a component look like? Let's start with a simple "Hello World" example... -->
 
-In our `/src/App.js` file, let's remove the contents and in its place add this component definition...
+In our `/src/App.js` file, let's remove the boilerplate content that `create-react-app` sets up for us. We'll leave the App function intact and replace the return value with an h1 tag with some content inside. We should also be able to get rid of both import statements as we won't need those resources.
 
-```js
-// bring in React from React
-import React from 'react'
-
-// Here we define our Person component
-function Person() {
+```javascript
+function App() {
   return (
-    <h1>Tigger</h1>
+    <h1>App Component</h1>
   );
 }
 
-export default Person
+export default App;
 ```
 
-Let's break down the things we see here...
 
-##### `function Hello`
-This is the component we're creating. In this example, we are creating a "Hello" functional component.
-
-##### `extends Component`
-This is the React library class we inherit from to create our component definition.
-
-##### `return`
-Every component has, at minimum, a return. It generates a **Virtual DOM** node that will be added to the actual DOM.
-* Looks just like a regular ol' DOM node, but it's not yet attached to the DOM. In this example the return is handling this functionality.
-
-##### `export default Hello`
-This exposes the Hello class to other files which import from the App.js file. The `default` keyword means that any import that's name doesn't match a named export will automatically revert to this. Only one default is allowed per file.
-
-### Quick Recap
-
-![](https://media2.giphy.com/media/ekvi8AacTWOuw5hHLS/giphy.gif)
-
-## JSX
-
-> Hey you got your html in my javascript!
+<!-- > Hey you got your html in my javascript!
 >
 > You got your javascript in my html!
 >
-> (https://youtu.be/O7oD_oX-Gio?t=5s)
+> (https://youtu.be/O7oD_oX-Gio?t=5s) -->
 
-Let's talk about the value that the render method returns. It looks an awful lot like an HTML heading, but it's not. We often write out React components in JSX.
+<!-- Let's talk about the value that the render method returns. It looks an awful lot like an HTML heading, but it's not. We often write out React components in JSX.
 
 JSX is [a language that compiles to Javascipt](https://reactjs.org/docs/introducing-jsx.html) that allows us to write code that strongly resembles HTML. It is eventually compiled to lightweight JavaScript objects.
 
-Your Hello function:
+Your Hello function: -->
 
 * Currently returns JSX, not HTML.
 The JSX creates a heading with 'Hello World!'.
