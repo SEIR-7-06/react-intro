@@ -260,18 +260,142 @@ At this point, take another look at the three files we've seen so far, `/public/
 
 <!-- What does a component look like? Let's start with a simple "Hello World" example... -->
 
-In our `/src/App.js` file, let's remove the boilerplate content that `create-react-app` sets up for us. We'll leave the App function intact and replace the return value with an h1 tag with some content inside. We should also be able to get rid of both import statements as we won't need those resources.
+In our `/src/App.js` file, let's remove the boilerplate content that `create-react-app` sets up for us. We'll leave the App function intact and replace the return value with any markup you wish and watch it render to the page.
 
 ```javascript
 function App() {
   return (
-    <h1>App Component</h1>
+    <div>
+      <h1>My React App</h1>
+      <h2>Todo List:</h2>
+      <ul>
+        <li>Learn about components</li>
+        <li>Learn about props</li>
+        <li>Learn about state</li>
+        <li>Give the dog a bath</li>
+      </ul>
+    </div>
   );
 }
 
 export default App;
 ```
 
+As a rule the returned JSX can only have a single parent element.
+
+This code would break.
+```javascript
+function App() {
+  return (
+    <h1>My React App</h1>
+    <p>This is a paragraph tag</p>
+  );
+}
+```
+
+This would not.
+```javascript
+function App() {
+  return (
+    <div>
+      <h1>My React App</h1>
+      <p>This is a paragraph tag</p>
+    </div>
+  );
+}
+```
+
+You can also wrap your markup in something called a [React fragment](https://reactjs.org/docs/fragments.html) which will not render as actual HTML in the browser.
+
+```javascript
+function App() {
+  return (
+    <>
+      <h1>My React App</h1>
+      <p>This is a paragraph tag</p>
+    </>
+  );
+}
+```
+
+We can get rid of both import statements as we won't need those resources.
+
+## Child Components
+
+Remember how we said a component can have many child components within it? To understand this concept let's create a `Person` component and make it a child of the `App` component.
+
+Create a new directory called `components` inside of your `src` directory.
+
+In the terminal run
+```bash
+mkdir ./src/components
+```
+
+Create a file called `Person.js` in the `components` directory.
+```bash
+touch ./src/components/Person.js
+```
+
+Inside of the `Person.js` file, let's define our `Person` component and export it from the file.
+
+```JS
+function Person() {
+  return (
+    <div>
+      <h2>Name: Flynn</h2>
+      <p>Favorite Color: Blue</p>
+    </div>
+  );
+}
+
+export default Person;
+```
+
+We simply define a function called Person that returns some JSX.
+
+- Notice how Person is capitalized. React components are always capitalized. We'll explain why in a bit.
+
+- Notice how we wrap the JSX code in a set of parentheses. This allows us to put the JSX on a new line after the return and makes it easier to read.
+
+- Notice the export statement which will allow us to import the component into another file.
+
+Let's navigate back to the `App.js` file. First let's import our new `Person` component into `App.js`. Then let's render our `Person` component inside the `App` component replacing the existing content we had in there.
+
+```javascript
+import Person from './components/Person';
+
+function App() {
+  return (
+    <div className="App">
+      <h1>My React App</h1>
+      <Person />
+    </div>
+  );
+}
+
+export default App;
+```
+
+To render (or call) the `Person` component we simply include it in our JSX inside a set of opening and closing angle brackets. In this way the `Person` component is a child of the `App` component. The `App` component is a parent to the `Person` component. Any time we render the `App` component we will also render the `Person` component.
+
+We can now easily create many instances of the `Person` component. We can render it as many times as we want.
+
+```javascript
+import Person from './components/Person';
+
+function App() {
+  return (
+    <div className="App">
+      <h1>My React App</h1>
+      <Person />
+      <Person />
+      <Person />
+    </div>
+  );
+}
+
+export default App;
+```
 
 <!-- > Hey you got your html in my javascript!
 >
@@ -285,7 +409,7 @@ JSX is [a language that compiles to Javascipt](https://reactjs.org/docs/introduc
 
 Your Hello function: -->
 
-* Currently returns JSX, not HTML.
+<!-- * Currently returns JSX, not HTML.
 The JSX creates a heading with 'Hello World!'.
 * Your component reads this and renders a "Hello World!" heading.
 
@@ -293,12 +417,12 @@ The JSX creates a heading with 'Hello World!'.
 
 Here is an example of React code without JSX-
 
-![Templates Page](images/react-without-jsx.png)
+![Templates Page](images/react-without-jsx.png) -->
 
 
 ## Virtual DOM 
 
-You may have noticed that our `src/index.js` code mentions ReactDOM. ReactDOM doesn't refer to the same DOM we know. Instead, it refers to a Virtual DOM. The Virtual DOM is a key piece of how React works.
+<!-- You may have noticed that our `src/index.js` code mentions ReactDOM. ReactDOM doesn't refer to the same DOM we know. Instead, it refers to a Virtual DOM. The Virtual DOM is a key piece of how React works.
 
 The Virtual DOM is a Javascript representation of the actual DOM. The virtual DOM is a staging area for changes that will eventually be implemented.
 
@@ -311,9 +435,9 @@ The Virtual DOM is a Javascript representation of the actual DOM. The virtual DO
 
 > If you're interested in learning more about the Virtual DOM, [check this video out](https://www.youtube.com/watch?v=-DX3vJiqxm4).
 
-So we've created the template for our component. Now, let's use `/src/index.js` to load in our new component and render it on the DOM...
+So we've created the template for our component. Now, let's use `/src/index.js` to load in our new component and render it on the DOM... -->
 
-```js
+<!-- ```js
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Hello from './App.js'
@@ -330,13 +454,13 @@ ReactDOM.render(
   1. The component.
   2. The DOM element we want to append it to.
 
-> **NOTE:** Whenever you use a self-closing tag in JSX, you **MUST** end it with a `/` like `<Hello />` in the above example.
+> **NOTE:** Whenever you use a self-closing tag in JSX, you **MUST** end it with a `/` like `<Hello />` in the above example. -->
 
----
+<!-- --- -->
 
-### Review Questions
+<!-- ### Review Questions
 - How does JSX make your life as a developer easier?
-- What are some of the advantages of having a virtual DOM?
+- What are some of the advantages of having a virtual DOM? -->
 
 
 
