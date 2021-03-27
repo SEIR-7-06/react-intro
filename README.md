@@ -32,16 +32,18 @@ React takes this efficiency even further, using something called the **Virtual D
 
 <!-- > **Selling Point:** By modeling small compatible components that focus on just rendering a view, we can move business logic out of the DOM, and therefore improve our app's performance, maintainability, modularity and readability. -->
 
-#### Some History
+<!-- TODO: CONSIDER BRINGING THE FACEBOOK HISTORY BACK ON SOME LEVEL -->
+
+<!-- #### Some History
 
 The first thing most people hear about React is "Facebook uses it."
 * First used by Facebook in 2011.
 * Then Instagram in 2012.
 * Went open source in May 2013.
 
-**BEHOLD! The OLD FACEBOOK!** 
+**BEHOLD! The OLD FACEBOOK!**  -->
 
-*2008*
+<!-- *2008*
 
 <img src='https://lh3.googleusercontent.com/d4ypmybEZT8SAOj1efmy9CCkKwNG3Dd-Mv0__FoIsWgK0iWuYWBS4NPHOf71ANpKcx2ElOndGeiDInxm8p-sOMqNXBkPy3y-HsH45lGscqJepxFOYkU1_6BbAw' alt='2008 facebook' width='600px'>
 
@@ -51,7 +53,7 @@ The first thing most people hear about React is "Facebook uses it."
 
 React was born out of Facebook's frustration with the traditional MVC model and how...
   * Re-rendering something meant re-rendering everything (or just a lot).
-  * That had negative implications on processing power and ultimately user experience, which at times became glitchy and laggy.
+  * That had negative implications on processing power and ultimately user experience, which at times became glitchy and laggy. -->
 
 
 ### React from horse's mouth
@@ -70,9 +72,9 @@ In a traditional front end separation of concerns, we would have our markup (HTM
 
 ### What is a Component?
 
-A component is a reusable chunk of UI, housing both the markup and the logic for that particular piece of user interface.
+A component in React is a reusable chunk of UI, housing both the markup and the logic for that particular piece of user interface.
 
-Looking at Facebook, you could think of each status post as a **component**. You could think of the status feed as a component that contains many of the smaller status post components within. You could take that one step further and think of the Facebook app, as one giant component with several components within it, including the friends list, the header, etc...
+Using Facebook as an example, you could think of each status post as a **component**. You could think of the status feed as a component that contains many of the smaller status post components within. You could take that one step further and think of the Facebook app, as one giant component with several components within it, including the friends list, the header, etc...
 
 <!-- 
 [Templates vs Components](https://wanderoak.co/fixed-templates-vs-components/)
@@ -82,7 +84,10 @@ Looking at Facebook, you could think of each status post as a **component**. You
 > [WanderOak - Fixed Templates vs. Components](https://wanderoak.co/fixed-templates-vs-components/) -->
 
 ### Exercise
-Let's see if we can identify the components in the Tube Tracker app below.
+
+TODO: INSERT A SIMPLER COMPONENT BREAKDOWN EXAMPLE HERE THAN THE TUBE TRACKER AND THEN DISCUSS IT.
+
+<!-- Let's see if we can identify the components in the Tube Tracker app below.
 
 ![Wireframe](images/wireframe.png)
 ![Wireframe with components](images/wireframe_deconstructed.png)
@@ -98,7 +103,7 @@ Notice the structure of how the various components are nested.
             - Trains
 ```
 
-We can say that the entire Tube Tracker app is a component containing both the Network component and the Predictions component. We say that the Network and Predictions components are child components of the TubeTracker component and the TubeTracker component is a parent of the Network and the Predictions components. This parent/child relationship creates a tree-like structure which will become important to us later on.
+We can say that the entire Tube Tracker app is a component containing both the Network component and the Predictions component. We say that the Network and Predictions components are child components of the TubeTracker component and the TubeTracker component is a parent of the Network and the Predictions components. This parent/child relationship creates a tree-like structure which will become important to us later on. -->
 
 ## Exercise: Identifying Components
 
@@ -191,7 +196,7 @@ ReactDOM.render(
 
 This function call takes two arguments, the component we want to render, and the element on the page that we want to render our component to. This code will take our `<App />` component and render it on the page to the element with the id of "root".
 
-Notice that before we render our `<App />` component to the page, we import it from another file, `./App.js`.
+Notice that before we render our `<App />` component to the page, we import it from another file, `App.js`.
 
 ```javascript
 import App from './App';
@@ -215,7 +220,7 @@ Here we define a function, `App` that simply returns some markup. Pull up your R
 
 ### Components
 
-This App function is a **React component**. Here in our `./src/App.js` file we are defining our React component just as we would define a function. Just like any other function in JavaScript we can pass parameters in the parentheses `()` and our function has a return statement.
+This App function is a **React component**. Here in our `App.js` file we are defining our React component just as we would define a function. Just like any other function in JavaScript we can pass parameters in the parentheses `()` and our function has a return statement.
 
 
 ### JSX
@@ -226,9 +231,9 @@ Behind the scenes our `create-react-app` setup will convert this **JSX** code in
 
 ### Rendering a Component
 
-Now that we've defined our **React component** (function) we can render it to the page with this syntax, `<App />`, just like we do in our `./src/index.js` file. When we write `<App />` we are simply calling the `App` function defined in `./src/App.js`.
+Now that our **React component** (function) has been defined we can render it to the page with this syntax, `<App />`, just like we do in our `index.js` file. When we write `<App />` we are calling the `App` function defined in `App.js` which just returns some markup.
 
-Notice that we are also exporting our `App` component. In order to import `App` in our `./src/index.js` file we must first export it from `./src/App.js`.
+Notice that we are also exporting our `App` component. In order to import `App` in our `index.js` file we must first export it from `./src/App.js`.
 
 <details>
   <summary>Hungry for More</summary>
@@ -318,7 +323,9 @@ function App() {
 }
 ```
 
-We can get rid of both import statements as we won't need those resources.
+We can get rid of both import statements for the logo but keep the one for the CSS.
+
+---
 
 ## Child Components
 
@@ -336,7 +343,7 @@ Create a file called `Person.js` in the `components` directory.
 touch ./src/components/Person.js
 ```
 
-Inside of the `Person.js` file, let's define our `Person` component and export it from the file.
+Inside of the `Person.js` file, define our `Person` component and export it from the file.
 
 ```JS
 function Person() {
@@ -363,6 +370,7 @@ Let's navigate back to the `App.js` file. First let's import our new `Person` co
 
 ```javascript
 import Person from './components/Person';
+import './App.css';
 
 function App() {
   return (
@@ -378,10 +386,15 @@ export default App;
 
 To render (or call) the `Person` component we simply include it in our JSX inside a set of opening and closing angle brackets. In this way the `Person` component is a child of the `App` component. The `App` component is a parent to the `Person` component. Any time we render the `App` component we will also render the `Person` component.
 
+---
+
+### Creating Many Instances
+
 We can now easily create many instances of the `Person` component. We can render it as many times as we want.
 
 ```javascript
 import Person from './components/Person';
+import './App.css';
 
 function App() {
   return (
@@ -396,6 +409,575 @@ function App() {
 
 export default App;
 ```
+
+---
+
+### Multiple Child Components
+
+Let's define a `Dog` component the same way we defined our `Person` component and then render it in our `App` component.
+
+Create a file called `Dog.js` in your `components` directory.
+
+```bash
+touch ./src/components/Dog.js
+```
+
+Define the component returning some markup and export it at the bottom of the file.
+```javascript
+function Dog() {
+  return (
+    <div>
+      <h2>Name: Sparky</h2>
+      <p>Favorite Activity: Chasing the ball</p>
+    </div>
+  );
+}
+
+export default Dog;
+```
+
+Import it into the `App.js` file and then render the `Dog` component within the `App` component with `<Dog />`. We can create as many instances of the `Dog` component as we want. Here we render it twice.
+
+```javascript
+import Person from './components/Person';
+import Dog from './components/Dog';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <h1>My React App</h1>
+      <Person />
+      <Person />
+      <Person />
+      <Dog />
+      <Dog />
+    </div>
+  );
+}
+
+export default App;
+```
+
+---
+
+<!-- TODO: DECIDE IF WE WANT TO INTRO PROPS HERE OR LATER -->
+
+---
+
+## Recipes App
+
+The previous exercise was just a warm up. For this code-along activity we are going to be building an app to help users keep track of their recipes. The user will be able to browse recipes by categories, such as breakfast, lunch, and dinner, and create recipes of their own.
+
+### Some CSS
+
+We are going to have a minimal amount of CSS for this activity to make it easier for us to work on. Delete the existing CSS inside of `./src/App.css` and paste in the following code.
+
+<details>
+  <summary>CSS for our Recipes App</summary>
+
+  ```css
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  a:visited {
+    color: inherit;
+  }
+
+  button {
+    padding: 6px 8px;
+    margin: 0 20px 20px 0;
+    cursor: pointer;
+  }
+
+  /* SITEWIDE *********************************************** */
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  /* HEADER ************************************************* */
+  .header {
+    border: 2px solid #aaa;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navList {
+    display: flex;
+  }
+
+  .navLink {
+    display: block;
+    padding: 20px;
+  }
+
+  .navLink:hover {
+    color: orange;
+  }
+
+  .main-page {
+    display: flex;
+  }
+
+  /* SIDEBAR ************************************************* */
+  .sidebar {
+    width: 240px;
+    min-width: 300px;
+    border: 2px solid #aaa;
+  }
+
+  .sidebar-card {
+    display: flex;
+    padding: 20px;
+    border-bottom: 2px solid #aaa;
+    cursor: pointer;
+  }
+
+  .sidebar-card:hover {
+    background: #efefef;
+  }
+
+  /* category INFO *********************************************** */
+  .category-info {
+    border: 2px solid #aaa;
+    flex-grow: 1;
+  }
+
+  .category-detail {
+    border: 2px solid #aaa;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .category-content {
+    padding-right: 15px;
+  }
+
+  .category-img {
+    width: 525px;
+    max-width: 50%;
+
+  }
+
+  /* RECIPES SECTION ******************************************* */
+  .recipes-section {
+    border: 2px solid #aaa;
+    cursor: pointer;
+  }
+
+  .add-recipe-button {
+    margin: 15px;
+    padding: 7px 10px;
+  }
+
+  .recipe {
+    border-top: 2px solid #aaa;
+    padding: 18px;
+  }
+
+  .recipe:hover {
+    background: #efefef;
+  }
+
+  /* RECIPE ADD PAGE ******************************************** */
+  .form {
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 20px;
+  }
+
+  .form-header {
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  .form-label {
+    width: 100px;
+  }
+
+  .form-input {
+    width: 100%;
+    border-radius: 3px;
+    border: 2px solid #aaa;
+    padding: 5px;
+  }
+
+  .form-input-body {
+    height: 200px;
+  }
+  /* SHOW RECIPE PAGE **************************************** */
+  .show-recipe-page {
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 20px;
+  }
+
+  .recipe-category-name,
+  .recipe-title,
+  .recipe-body {
+    margin-bottom: 10px;
+  }
+  ```
+</details>
+
+---
+
+### Adding the Header Component
+
+First let's create a `Header` component for our app. Create a `Header.js` file inside of the components directory.
+
+```bash
+touch ./src/components/Header.js
+```
+
+Inside of `Header.js` let's set up our `Header` component that returns the **JSX** for our header. It will include the app name and some navigation links.
+
+```javascript
+function Header() {
+  return (
+    <header className="header">
+      <h1 className="header-title">Kitchenpedia</h1>
+
+      <nav>
+        <ul className="navList">
+          <li><a className="navLink" href="/">Home</a></li>
+          <li><a className="navLink" href="/">Explore</a></li>
+        </ul>
+      </nav>
+    </header>
+  );
+}
+
+export default Header;
+```
+
+We can now import our `Header` component into the `App.js` file and then render it inside of our `App` component. Let's get rid of the `Person` and `Dog` components as well.
+
+```javascript
+import Header from './components/Header';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <Header />
+    </div>
+  );
+}
+
+export default App;
+```
+
+---
+
+### Set Up the Home Page
+
+Our app is going to be organized into different "pages" that the user can view. Let's create a `pages` directory where we will store all of our page components.
+
+```bash
+mkdir ./src/pages
+```
+
+Within the `pages` directory create a file called `HomePage.js` for our `HomePage` component.
+
+```bash
+touch ./src/pages/HomePage.js
+```
+
+Inside of `HomePage.js` set up a simple **React component** that returns some **JSX**.
+
+```javascript
+function HomePage() {
+  return (
+    <div className="container">
+      <h1>Welcome to Kitchenpedia</h1>
+    </div>
+  );
+}
+
+export default HomePage;
+```
+
+We can now import the `HomePage` component into our `App.js` file and render it inside of our `App` component right under the `Header` component.
+
+```js
+import Header from './components/Header';
+import HomePage from './pages/HomePage';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <Header />
+      <HomePage />
+    </div>
+  );
+}
+
+export default App;
+```
+
+---
+
+### Set Up the Main Page
+
+Let's create a `MainPage` component where we will be able select a category and view recipes for that category.
+
+```bash
+touch ./src/pages/MainPage.js
+```
+Inside of `MainPage.js` let's set up our component
+```js
+function MainPage() {
+  return (
+    <div className="main-page">
+      
+      <aside className="sidebar">
+        Category Sidebar
+      </aside>
+
+      <main className="category-info">
+        
+        <section className="category-detail">
+          Category Details
+        </section>
+
+        <section className="recipes-section">
+          Recipes Section
+        </section>
+      </main>
+    </div>
+  );
+}
+
+export default MainPage;
+```
+
+Now import the `MainPage` component into the `App.js` file and render the `MainPage` component in the `App` component.
+
+```js
+import Header from './components/Header';
+import HomePage from './pages/HomePage';
+import MainPage from './pages/MainPage';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <Header />
+      {/* <HomePage /> */}
+      <MainPage />
+    </div>
+  );
+}
+
+export default App;
+```
+
+Let's see what we have in the browser now. Alright, now we can see our header and the basic layout of our main page. Eventually we will be able to select a category from the sidebar and view information about that category and the recipes for that category.
+
+We eventually want to be able to switch between the `HomePage` component and the `MainPage`component by clicking on the navigation links. For now though, to switch between them we can comment one out and uncomment the one we want to see. Let's comment out the `HomePage` component and uncomment the `MainPage` component.
+
+---
+
+### Add a Sidebar Component
+
+Let's flesh out our `MainPage` component some more by creating some child components to render within it.
+
+Because we will be creating a lot of components it will help us to create some additional structure. Let's create a directory called `mainPageComponents` inside of our `components` directory.
+
+```bash
+mkdir ./src/components/mainPageComponents
+```
+
+Within our `mainPageComponents` directory let's create a `Sidebar.js` file for our `Sidebar` component.
+
+```bash
+touch ./src/components/mainPageComponents/Sidebar.js
+```
+
+Inside of `Sidebar.js` define the `Sidebar` component.
+
+```js
+function Sidebar() {
+  return (
+    <aside className="sidebar">
+      <ul>
+        <li className="sidebar-card">Breakfast</li>
+        <li className="sidebar-card">Soups</li>
+        <li className="sidebar-card">Pasta Dishes</li>
+      </ul>
+    </aside>
+  );
+}
+
+export default Sidebar;
+```
+
+And then let's render the `Sidebar` component within the `MainPage` component.
+
+```js
+import Sidebar from '../components/mainPageComponents/Sidebar';
+
+function MainPage() {
+  return (
+    <div className="main-page">
+      
+      <Sidebar />
+
+      <main className="category-info">
+        
+        <section className="category-detail">
+          Category Details
+        </section>
+
+        <section className="recipes-section">
+          Recipes Section
+        </section>
+      </main>
+    </div>
+  );
+}
+
+export default MainPage;
+```
+
+---
+
+### Category Detail and Recipes Section
+
+Let's set up the `CategoryDetail` component and the `Recipes` component.
+
+```bash
+touch ./src/components/mainPageComponents/CategoryDetail.js
+touch ./src/components/mainPageComponents/Recipes.js
+```
+
+The `CategoryDetail` component will display some information about the featured category.
+
+In `CategoryDetail.js`
+```js
+function CategoryDetail() {
+  return (
+    <div className="category-detail">
+      <div className="category-content">
+        <h2>Breakfast</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit quas architecto a aliquam voluptas omnis debitis ut sint, incidunt officia maxime? Assumenda voluptate, sint id cupiditate optio aliquid deleniti beatae?</p>
+      </div>
+
+      <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666" alt="" className="category-img"/>
+    </div>
+  );
+}
+
+export default CategoryDetail;
+```
+
+The `Recipes` component will display a list of recipes for that particular category. For now we'll hard code some made up recipes for the breakfast category.
+
+In `Recipes.js`
+```js
+function Recipes() {
+  return (
+    <section className="recipes-section">
+      <button className="add-recipe-button">
+        Add Recipe
+      </button>
+
+      <article className="recipe">
+        <h4>Breakfast Potatoes</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quidem corporis facilis, placeat pariatur unde mollitia magnam ratione deserunt ullam autem, quisquam commodi earum excepturi dolores voluptatem sequi repudiandae beatae!</p>
+      </article>
+      <article className="recipe">
+        <h4>Rolled Oats</h4>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non cum nulla quisquam voluptatem animi fugiat optio dolor harum veritatis eaque perferendis, sunt quasi hic voluptates, error quod obcaecati maxime quo!</p>
+      </article>
+      <article className="recipe">
+        <h4>French Toast</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam sit accusantium quod sed dolorum perferendis deserunt voluptatem. Commodi sed natus adipisci veniam reiciendis eligendi corporis consequatur, ullam enim praesentium fugit.</p>
+      </article>
+    </section>
+  );
+}
+
+export default Recipes;
+```
+
+Now in our `MainPage` component we can import the `CategoryDetail` component and the `Recipes` component. And then we can render them inside the `MainPage` component. In this way the `CategoryDetail` and `Recipes` components are child components to the `MainPage` component. And the `MainPage` component is a child of the `App` component.
+
+```js
+import Sidebar from '../components/mainPageComponents/Sidebar';
+import CategoryDetail from '../components/mainPageComponents/CategoryDetail';
+import Recipes from '../components/mainPageComponents/Recipes';
+
+function MainPage() {
+  return (
+    <div className="main-page">
+      <Sidebar />
+      <main className="category-info">
+        <CategoryDetail />
+        <Recipes />
+      </main>
+    </div>
+  );
+}
+
+export default MainPage;
+```
+
+Alright, taking a look at our app in the browser, we can see our Recipes App start to come to life. None of the buttons work but the general features of the page are all there. Take a few minutes to look over the code that we have written so far and how it all fits together.
+
+---
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+---
 
 <!-- > Hey you got your html in my javascript!
 >
@@ -464,7 +1046,7 @@ ReactDOM.render(
 
 
 
-## Hello World: A Little Dynamic
+<!-- ## Hello World: A Little Dynamic
 
 Our `Hello` component isn't too helpful. Let's make it more interesting.
 * Rather than simply display "Hello world", let's display a greeting to the user.
@@ -495,9 +1077,9 @@ function Hello(props) {
 
 In the above example, we replaced "world" with `{props.name}`.
 
-### What are `.props`?
+### What are `.props`? -->
 
-Properties! Every component has `.props`
+<!-- Properties! Every component has `.props`
 * Properties are immutable. That is, they cannot be changed while your program is running.
 * We define properties in development and pass them in as attributes to the JSX element in our `.render` method.
 
@@ -626,7 +1208,7 @@ const Comment = (props) => {
 export default Comment;
 ```
 
-Then in `src/Post.js`, we need to load in our `Comment` component and render it inside of our `Post` component...
+Then in `Post.js`, we need to load in our `Comment` component and render it inside of our `Post` component...
 
 ```js
 import React from 'react';
@@ -690,4 +1272,4 @@ export default Post;
 * Why do we use components in React?
 * What is the Virtual DOM?
 * What is JSX?
-* What features does `create-react-app` give us?
+* What features does `create-react-app` give us? -->
