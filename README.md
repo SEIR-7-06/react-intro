@@ -866,11 +866,11 @@ export default MainPage;
 
 ### Category Detail and Recipes Section
 
-Let's set up the `CategoryDetail` component and the `Recipes` component.
+Let's set up the `CategoryDetail` component and the `RecipesList` component.
 
 ```bash
 touch ./src/components/mainPageComponents/CategoryDetail.js
-touch ./src/components/mainPageComponents/Recipes.js
+touch ./src/components/mainPageComponents/RecipesList.js
 ```
 
 The `CategoryDetail` component will display some information about the featured category.
@@ -893,11 +893,11 @@ function CategoryDetail() {
 export default CategoryDetail;
 ```
 
-The `Recipes` component will display a list of recipes for that particular category. For now we'll hard code some made up recipes for the breakfast category.
+The `RecipesList` component will display a list of recipes for that particular category. For now we'll hard code some made up recipes for the breakfast category.
 
-In `Recipes.js`
+In `RecipesList.js`
 ```js
-function Recipes() {
+function RecipesList() {
   return (
     <section className="recipes-section">
       <button className="add-recipe-button">
@@ -920,15 +920,16 @@ function Recipes() {
   );
 }
 
-export default Recipes;
+export default RecipesList;
 ```
+---
 
-Now in our `MainPage` component we can import the `CategoryDetail` component and the `Recipes` component. And then we can render them inside the `MainPage` component. In this way the `CategoryDetail` and `Recipes` components are child components to the `MainPage` component. And the `MainPage` component is a child of the `App` component.
+Now in our `MainPage` component we can import the `CategoryDetail` component and the `RecipesList` component. And then we can render them inside the `MainPage` component. In this way the `CategoryDetail` and `RecipesList` components are child components to the `MainPage` component. And the `MainPage` component is a child of the `App` component.
 
 ```js
 import Sidebar from '../components/mainPageComponents/Sidebar';
 import CategoryDetail from '../components/mainPageComponents/CategoryDetail';
-import Recipes from '../components/mainPageComponents/Recipes';
+import RecipesList from '../components/mainPageComponents/RecipesList';
 
 function MainPage() {
   return (
@@ -936,7 +937,7 @@ function MainPage() {
       <Sidebar />
       <main className="category-info">
         <CategoryDetail />
-        <Recipes />
+        <RecipesList />
       </main>
     </div>
   );
@@ -945,9 +946,85 @@ function MainPage() {
 export default MainPage;
 ```
 
-Alright, taking a look at our app in the browser, we can see our Recipes App start to come to life. None of the buttons work but the general features of the page are all there. Take a few minutes to look over the code that we have written so far and how it all fits together.
+---
+
+### Creating a Recipe Component
+
+Take a look back at the recipes component in `RecipesList.js`. You'll notice that each recipe follows the same exact structure and we're repeating a lot of code here unnecessarily. Let's create a `Recipe` component that we can render iside the `RecipesList` component for each recipe.
+
+```bash
+touch ./src/components/mainPageComponents/Recipe.js
+```
+
+For now we can copy the **JSX** of one of our recipes and paste it in the `Recipe` component.
+
+```js
+function Recipe() {
+  return (
+    <article className="recipe">
+      <h4>Breakfast Potatoes</h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quidem corporis facilis, placeat pariatur unde mollitia magnam ratione deserunt ullam autem, quisquam commodi earum excepturi dolores voluptatem sequi repudiandae beatae!</p>
+    </article>
+  );
+}
+
+export default Recipe;
+```
+
+Back in `RecipeList.js` we can import the `Recipe component and render it for each one of our recipes.
+
+```js
+import Recipe from './Recipe';
+
+function RecipesList() {
+  return (
+    <section className="recipes-section">
+      <button className="add-recipe-button">
+        Add Recipe
+      </button>
+
+      <Recipe />
+      <Recipe />
+      <Recipe />
+    </section>
+  );
+}
+
+export default RecipesList;
+```
+
+This makes our `RecipesList` component much easier to read. If we take a look at the app in the browser, you'll notice that we are repeating the same recipe three times. Right now we are hard coding the "Breakfast Potatoes" content in the `Recipe` component. In the next section we are going to learn how we can pass information to a component so that it renders with different content each time using something called **React props**.
 
 ---
+
+Alright, taking a look at our app in the browser, we can see our Recipes App start to come to life. None of the buttons work but the general features of the page are all there. Take some time to look over the code that we have written so far and trace how it all fits together. Start with the `index.js` file and work your way down the component tree. The `App` component is the parent of the `MainPage` component. The `MainPage` component is a parent to the `RecipesList` component and so forth. Trace the flow of components multiple times until you are sure you understand it. We are going to be building on all of this information in the next unit.
+
+That concludes the code along for this lesson. We are starting to get a sense for how a React application can be constructed with these building blocks called **components**.
+
+## The Virtual DOM
+
+When our `index.html` file initially renders in the browser, React, using the DOM API under the hood, will take all of the **JSX** in our **components** and append it to the page as HTML.
+
+Before it appends all that HTML to the page, it will create a giant JavaScript object representing all of the markup in the app and hold that JavaScript object in the browser's memory. This giant JavaScript object is a virtual representation of the DOM, the **Virtual DOM**.
+
+In our Recipes App, let's say we were to click on a different category. We would want to see the details for that category and see the recipes for that category.
+
+When the state of our application changes, React will compare the old version of our **Virtual DOM** with the new version of our **Virtual DOM**, note the differences, and only render the exact parts of the page that need need to change. We will revisit the concept when we work with **state** in React, but for now, know that the **Virtual DOM** allows React to be highly efficient in how it renders and changes content on the page.
+
+[The React Docs on the Virtual DOM](https://reactjs.org/docs/faq-internals.html#what-is-the-virtual-dom)
+
+## Review
+
+* Why do we use components in React?
+* What is the parent/child relationship of the Recipes App we just created?
+* How is our React app rendered to the page in the browser?
+* What is JSX?
+* What is the Virtual DOM?
+* What features does `create-react-app` give us?
+
+<!-- When we take a look at our `index.html` file in the public directory we see that there is no markup in the body tag except for one div with an id of "root". But when we put our app up in the browser, we see our app. In the browser, if we go to our developer tools and open the elements tab, we can see all of the HTML for our app. So what gives? -->
+
+
 
 <br/>
 <br/>
@@ -1002,7 +1079,7 @@ Here is an example of React code without JSX-
 ![Templates Page](images/react-without-jsx.png) -->
 
 
-## Virtual DOM 
+<!-- ## Virtual DOM  -->
 
 <!-- You may have noticed that our `src/index.js` code mentions ReactDOM. ReactDOM doesn't refer to the same DOM we know. Instead, it refers to a Virtual DOM. The Virtual DOM is a key piece of how React works.
 
@@ -1269,7 +1346,4 @@ export default Post;
 
 ## Closing
 
-* Why do we use components in React?
-* What is the Virtual DOM?
-* What is JSX?
-* What features does `create-react-app` give us? -->
+-->
