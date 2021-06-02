@@ -136,30 +136,38 @@ As you're drawing this out, think about the following questions...
 
 ## Code Along: Initial Setup
 
-In order to create a new project and get our development environment setup, we are going to use the Terminal command `create-react-app`.
+In order to create a new project and get our development environment setup, we are going to use a tool called `create-react-app`.
 
 `create-react-app` is an NPM package that will handle the details of setting up a React project for us. It will install the necessary dependancies, and set up a server to serve our front end files to the browser. It will also watch our files for any changes and automatically update the browser when we save a file, also called "hot reloading".
 
-<!-- that writes our build dependencies for us so that we can do less configuration. It allows us to use React, JSX, and ES6. It also allows us to import our CSS, it autoprefixes our CSS so that we don't have to worry about cross browser compatibility, it gives us a dev server to run, and it enables hot reloading which updates the code in our browser without us refreshing the page.
+It is possible to set up a React environment yourself, and many companies will set up their own custom React environments. However for our use cases, `create-react-app` will allow us to focus on learning how to use React and not worry about configuration.
 
-It uses Webpack which is a build tool that enables many of the features listed above. It also includes Babel which transpiles our JavaScript from ES6 to be compatible with older browsers. It also includes Autoprefixer for CSS compatibility, ESLint for linting, and Jest for testing. -->
-
-<!-- You can also set up all this yourself, but for now `create-react-app` allows us to worry more about our code and less about configuration. -->
-
-It is possible to set up a React environment yourself, however for now `create-react-app` allows us to focus on building with React and not worry about configuration.
-
-Navigate to your React directory and run...
+In your terminal, navigate to the directory where you would like to create your React app. And then run the following commands.
 ```bash
 $ npx create-react-app my-app
 $ cd my-app
 $ npm start
 ```
 
+The command may take a few minutes to complete depending on your internet connection. `create-react-app` will create a new directory for our React project. For our example it will create a directory called 'my-app'. Inside the directory it will set up our React environment, complete with a server that will serve our React app to the browser.
+
 We're using `npx` instead of `npm` here. `npx` allows us to run `create-react-app` without downloading the `create-react-app` package to our machines. `npx` allows us to run a hosted version of the package instead.
 
-`create-react-app` will create a new directory for our React project. In this example we called it "my-app". Once you have navigated into the directory for your new React project run `$ npm start` to start up the server. We'll want to keep this server running while we are working on our app. You can now view your React app at `http://localhost:3000`! Take a look.
+Navigate into the directory for your new React project.
+```bash
+cd my-app
+```
 
-Along with installing the necessary dependencies, it creates an initial app skeleton that looks like this...
+And then start up the server.
+```bash
+npm start
+```
+
+We'll want to keep this server running while we are working on our app. You can now view your React app at `http://localhost:3000`! Take a look.
+
+Open your new React app up in your code editor and take a look inside.
+
+Along with installing the necessary dependencies, `create-react-app` creates an initial app skeleton that looks like this...
 
 ```bash
 ├──README.md
@@ -177,7 +185,7 @@ Along with installing the necessary dependencies, it creates an initial app skel
       └──  logo.svg
 ```
 
-Take some time and look at what's been generated. Specifically look at `index.html`, `index.js`, and `App.js`.
+Take some time and look at what's been generated. Specifically look at `index.html`, `index.js`, and `App.js` inside the `public` directory and the `src` directory.
 
 ### index.html
 
@@ -234,7 +242,7 @@ function App() {
 }
 ```
 
-Here we define a function, `App` that simply returns some markup. Pull up your React app in the browser side by side with this file and you'll notice that the markup up here is what is being rendered to the page. Play with it. Change the markup in the return statement, save the file, and watch the rendered outpage change as well.
+Here we define a function, `App` that simply returns some markup (HTML). Pull up your React app in the browser side by side with this file and you'll notice that the markup up here is what is being rendered to the page. Try changing the markup in the return statement. Change the content. Add an HTML element. Save the file, and watch the rendered outpage change as well.
 
 ### Components
 
@@ -249,12 +257,12 @@ Behind the scenes our `create-react-app` setup will convert this **JSX** code in
 
 ### Rendering a Component
 
-Now that our **React component** (function) has been defined we can render it to the page with this syntax, `<App />`, just like we do in our `index.js` file. When we write `<App />` we are calling the `App` function defined in `App.js` which just returns some markup.
+Now that our **React component** (function) has been defined we can render it to the page with this syntax, `<App/>`, just like we do in our `index.js` file. When we write `<App/>` we are calling the `App` function defined in `App.js` which just returns some markup.
 
 Notice that we are also exporting our `App` component. In order to import `App` in our `index.js` file we must first export it from `./src/App.js`.
 
 <details>
-  <summary>Hungry for More</summary>
+  <summary>Hungry for More: How does JSX get converted to JavaScript</summary>
 
   Behind the scenes our `create-react-app` setup is using a tool called "Webpack", which is using another tool called "Babel" to "transpile" this **JSX** into vanilla JavaScript and regular React code before bundling it up and sending it off to the browser.
 
@@ -328,7 +336,7 @@ function App() {
 }
 ```
 
-You can also wrap your markup in something called a [React fragment](https://reactjs.org/docs/fragments.html) which will not render as actual HTML in the browser.
+You can also wrap your markup in something called a [React fragment](https://reactjs.org/docs/fragments.html) which will not render as actual HTML in the browser for the empty tags (`<>` and `</>`).
 
 ```javascript
 function App() {
@@ -341,7 +349,7 @@ function App() {
 }
 ```
 
-We can get rid of both import statements for the logo but keep the one for the CSS.
+At the top of the file we can get rid of the import statements for the logo but keep the one for the CSS.
 
 ---
 
@@ -479,13 +487,16 @@ export default App;
 
 ---
 
-<!-- TODO: DECIDE IF WE WANT TO INTRO PROPS HERE OR LATER -->
-
----
-
 ## Recipes App
 
 The previous exercise was just a warm up. For this code-along activity we are going to be building an app to help users keep track of their recipes. The user will be able to browse recipes by categories, such as breakfast, lunch, and dinner, and create recipes of their own.
+
+We'll keep the `Person` component and the `Dog` component for later activities when we introduce props in the next lesson.
+
+When we are finished today, it will look something like this.
+
+![Completed app](./images/completed-app.png)
+
 
 ### Some CSS
 
