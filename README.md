@@ -1000,7 +1000,7 @@ function Recipe() {
 export default Recipe;
 ```
 
-Back in `RecipeList.js` we can import the `Recipe component and render it for each one of our recipes.
+Back in `RecipesList.js` we can import the `Recipe component and render it for each one of our recipes.
 
 ```js
 import Recipe from './Recipe';
