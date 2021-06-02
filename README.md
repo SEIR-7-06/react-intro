@@ -22,9 +22,11 @@
 ### What is React and Why do popele like it?
 React is a JavaScript library for building interactive user interfaces.
 
-As the the front end of your application becomes larger and more complex, trying to manage that complexity with vanilla JavaScript or even jQuery becomes difficult.
+With jQuery we had the ability to dynamically interact with the DOM, updating content, creating and removing elements on the page, without having to trigger a full page refresh. In this way React will take the place of jQuery.
 
-React provides powerful tools for managing that complexity. With React, the user interface is broken out into reusable building blocks called **components**. Each component can house its own logic, manage its own state, and pass information to other **components**.
+As the the front end of your application becomes larger and more complex, trying to manage that complexity with vanilla JavaScript or even jQuery becomes difficult. The jQuery library alone doesn't provide us with tools to organize our code.
+
+React provides powerful tools for managing that complexity, giving us tools to organize our code. With React, the user interface is broken out into reusable building blocks called **components**. Each component can house its own logic, manage its own state, and pass information to other **components**.
 
 React also performs very efficiently in the browser. If we think back to using server-side templates in the previous units, whenever we wanted to update the data on the page, we needed to refresh the entire page to see our changes. We could improve this with jQuery by only rerendering part of the page.
 
@@ -72,9 +74,28 @@ In a traditional front end separation of concerns, we would have our markup (HTM
 
 ### What is a Component?
 
-A component in React is a reusable chunk of UI, housing both the markup and the logic for that particular piece of user interface.
+A component in React is a reusable chunk of user interface (UI).
 
-Using Facebook as an example, you could think of each status post as a **component**. You could think of the status feed as a component that contains many of the smaller status post components within. You could take that one step further and think of the Facebook app, as one giant component with several components within it, including the friends list, the header, etc...
+Using the homepage of Wikipedia as an example, we could think of each language section as an instance of a language component. Each language section has the same structure but different content.
+
+![wikipedia homepage](./images/wikipedia-homepage.png)
+
+If we were to draw a box around each component on the homepage it might look something like this.
+
+![wikipedia homepage components](./images/wikipedia-homepage-components.png)
+
+We might have many instances of a language component (red), a component for the search bar (green), and a component for the dropdown button (blue). All of these components might live inside of a parent component for the page (orange). In this way, all of these components would be children of the page component.
+
+In this way, we are able to break our user interface (UI) into smaller more manageble chunks. Each component holds the markup and the functionality for that particular chunk of UI.
+
+### Another Example
+
+Using Facebook as an example, you could think of each status post as a **component**. Each status post has the same structure but it might have different content, a different image, different text, and it might be associated with a different user.
+
+
+You could then think of the news feed as a component that contains many of the smaller status post components within it. You could take this further and think of the entire page as a component. The news feed component would be a child of the page component. The sidebar and the header components would be children of the page component as well.
+
+![facebook news feed](./images/facebook-newsfeed.png)
 
 <!-- 
 [Templates vs Components](https://wanderoak.co/fixed-templates-vs-components/)
@@ -83,9 +104,6 @@ Using Facebook as an example, you could think of each status post as a **compone
 ![Components Page](images/components-page.png)
 > [WanderOak - Fixed Templates vs. Components](https://wanderoak.co/fixed-templates-vs-components/) -->
 
-### Exercise
-
-TODO: INSERT A SIMPLER COMPONENT BREAKDOWN EXAMPLE HERE THAN THE TUBE TRACKER AND THEN DISCUSS IT.
 
 <!-- Let's see if we can identify the components in the Tube Tracker app below.
 
