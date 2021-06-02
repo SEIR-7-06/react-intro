@@ -3,11 +3,9 @@
 ![react-logo](./images/react-white-logo.png)
 
 ## Learning Objectives
-
-<!-- * Explain what a frontend framework is and why they can be helpful in writing more complex applications.
-* Explain what ReactJS is and where it fits in our applications' stack.
-* Explain the component model of web development.
-* Create and return React components in the browser. -->
+- Basic parts of a React app
+- React Components
+- Parent/Child Relationship with React components
 
 [React Documentation](https://reactjs.org/)
 
