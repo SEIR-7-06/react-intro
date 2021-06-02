@@ -20,7 +20,7 @@
 - There is a lot of debate over whether frontend frameworks count as frameworks at all -- some people say that they are just libraries and should be referred to as such. -->
 
 ### What is React and Why do popele like it?
-React is a JavaScript library for building interactive user interfaces.
+[React](https://reactjs.org/) is a JavaScript library for building interactive user interfaces.
 
 With jQuery we had the ability to dynamically interact with the DOM, updating content, creating and removing elements on the page, without having to trigger a full page refresh. In this way React will take the place of jQuery.
 
@@ -1044,46 +1044,22 @@ When the state of our application changes, React will compare the old version of
 
 ## Review
 
-* Why do we use components in React?
-* What is the parent/child relationship of the Recipes App we just created?
+* What is a component in React?
+* What benefits do components provide?
+* What is the parent/child relationship of the Recipes App we've created?
 * How is our React app rendered to the page in the browser?
 * What is JSX?
 * What is the Virtual DOM?
 * What features does `create-react-app` give us?
 
+## Additional Resources
+
+The [React documentation](https://reactjs.org/) is incredibly well put together and a great place to learn more about React.
+
+The [Introductory Tutorial](https://reactjs.org/tutorial/tutorial.html) featured on the React documentation will give you a great introduction to using **props** and **state** in React and will be a good primer on some of the topics we will be covering in the next few lessons.
+
 <!-- When we take a look at our `index.html` file in the public directory we see that there is no markup in the body tag except for one div with an id of "root". But when we put our app up in the browser, we see our app. In the browser, if we go to our developer tools and open the elements tab, we can see all of the HTML for our app. So what gives? -->
 
-
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
----
 
 <!-- > Hey you got your html in my javascript!
 >
