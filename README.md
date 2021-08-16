@@ -19,7 +19,7 @@
 - There are [many front end frameworks](https://2020.stateofjs.com/en-US/technologies/front-end-frameworks/)  and each go about solving problems of how state is managed, updated, and represented by a view but there are many commonalities.
 - There is a lot of debate over whether frontend frameworks count as frameworks at all -- some people say that they are just libraries and should be referred to as such. -->
 
-### What is React and Why do popele like it?
+### What is React and Why do people like it?
 [React](https://reactjs.org/) is a JavaScript library for building interactive user interfaces.
 
 With the DOM API (for example, `document.getElementById()`, `document.createElement()`) we had the ability to dynamically interact with the DOM (the Document Object Model), updating content, creating and removing elements on the page, without having to trigger a full page refresh. In this way React will allow us interact with the DOM in an easier and more efficient way.
