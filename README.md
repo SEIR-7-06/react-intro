@@ -181,6 +181,12 @@ npm start
 
 We'll want to keep this server running while we are working on our app. You can now view your React app at `http://localhost:3000`! Take a look.
 
+<br>
+
+---
+
+## Peek at the Files
+
 Open your new React app up in your code editor and take a look inside. You'll see a lot of files in here. Many of them are not important for us to uderstand at the moment. We'll just focus on the core pieces.
 
 Along with installing the necessary dependencies, `create-react-app` creates an initial app skeleton that looks like this...
@@ -264,14 +270,21 @@ Here we define a function, `App` that simply returns some markup (HTML). Pull up
 
 This App function is a **React component**. Here in our `App.js` file we are defining our React component just as we would define a function. Just like any other function in JavaScript we can pass parameters in the parentheses `()` and our function has a return statement.
 
+<br>
 
-### JSX
+---
+
+## JSX
 
 You'll notice something funny about this function. We are not returning regular JavaScript. Instead we are returning markup, something that looks an aweful lot like HTML. This HTML-like syntax is called [**JSX**](https://reactjs.org/docs/introducing-jsx.html).
 
 Behind the scenes our `create-react-app` setup will convert this **JSX** code into regular old JavaScript before sending it to the browser. By using **JSX** we can write code that strongly resembles HTML, a language we are already familiar with, and is easy to read and write.
 
-### Rendering a Component
+<br>
+
+---
+
+## Rendering a Component
 
 Now that our **React component** (function) has been defined we can render it to the page with this syntax, `<App/>`, just like we do in our `index.js` file. When we write `<App/>` we are calling the `App` function defined in `App.js` which just returns some markup.
 
@@ -298,6 +311,10 @@ At this point, take another look at the three files we've seen so far, `/public/
   ### What is Webpack?
   Webpack is a module bundler that can be configured to do all sorts of things in order to prepare our front end code into code that is ready to be sent to and read by a browser. For our uses, Webpack will take all of our React and JavaScript code, convert it into vanilla JavaScript, bundle it into a single JavaScript file, and then append it in a script tag to our `index.html` file. We can actually find this script tag by opening up the elements panel with our React app open.
 </details>
+
+<br>
+
+---
 
 ## Code Along: Let's Code
 
@@ -509,6 +526,9 @@ export default App;
 
 That concludes the code along for this lesson. We are starting to get a sense for how a React application can be constructed with these building blocks called **components**.
 
+<br>
+
+---
 
 ## The Virtual DOM
 
