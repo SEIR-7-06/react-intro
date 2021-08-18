@@ -27,7 +27,11 @@
 
 ## Why React?
 
-With the DOM API (for example, `document.getElementById()`, `document.createElement()`) we had the ability to dynamically interact with the DOM (the Document Object Model), updating content, creating and removing elements on the page. React will allow us to do the same thing, but in an easier and more efficient way.
+### Easily Interact with the DOM
+
+With the DOM API (for example, `document.getElementById()`, `document.createElement()`) we had the ability to dynamically interact with the DOM (the Document Object Model), updating content, creating and removing elements on the page. React will allow us to do the same thing, but in an easier and more efficient way. We will dive more into this throughout the next few lessons.
+
+### Provides a Way to Organize our Code
 
 As the the front end of your application becomes larger and more complex, trying to manage that complexity with vanilla JavaScript or even jQuery becomes difficult. The JavaScript language alone doesn't provide us with tools to organize our code.
 
