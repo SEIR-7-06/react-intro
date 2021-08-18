@@ -268,7 +268,7 @@ Here we define a function, `App` that simply returns some markup (HTML). Pull up
 
 ### Components
 
-This App function is a **React component**. Here in our `App.js` file we are defining our React component just as we would define a function. Just like any other function in JavaScript we can pass parameters in the parentheses `()` and our function has a return statement.
+This App function is a **React component**. Here in our `App.js` file we are defining our React component just as we would define a function. Just like any other function in JavaScript we can pass parameters in the parentheses `function App()` and our function has a return statement. Notice that after the return statement we include another set of parenthese. This let's us place our return value on a new line. Fancy.
 
 <br>
 
