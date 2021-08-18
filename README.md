@@ -264,7 +264,7 @@ function App() {
 }
 ```
 
-Here we define a function, `App` that simply returns some markup (HTML). Pull up your React app in the browser side by side with this file and you'll notice that the markup up here is what is being rendered to the page. Try changing the markup in the return statement. Change the content. Add an HTML element. Save the file, and watch the rendered outpage change as well.
+Here we define a function, `App` that simply returns some markup (HTML). Pull up your React app in the browser side by side with this file and you'll notice that the markup up here is what is being rendered to the page. Try changing the markup in the return statement. Change the content. Add an HTML element. Save the file, and watch the rendered page change as well!
 
 ### Components
 
