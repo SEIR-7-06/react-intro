@@ -301,9 +301,56 @@ Behind the scenes our `create-react-app` setup will convert this **JSX** code in
 
 ## Rendering a Component
 
-Now that our **React component** (function) has been defined we can render it to the page with this syntax, `<App/>`, just like we do in our `index.js` file. When we write `<App/>` we are calling the `App` function defined in `App.js` which just returns some markup.
+Now that our **React component** (function) has been defined we can render it to the page with this syntax, `<App/>`, just like we do in our `index.js` file. _When we write `<App/>` we are calling the `App` function defined in `App.js` which just returns some markup._
 
-Notice that we are also exporting our `App` component. In order to import `App` in our `index.js` file we must first export it from `./src/App.js`.
+In index.js
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+```
+
+<br>
+
+---
+
+in App.js, you'll also notice that we are exporting our `App` component.
+
+In App.js
+```javascript
+function App() {
+  return (
+    <div className="App">
+      <h1>Some markup</h1>
+    </div>
+  );
+}
+
+export default App;
+```
+
+This allows us to import the `App` component in our `index.js` file.
+
+In index.js
+```js
+...
+
+import App from './App';
+
+...
+```
+
+<br>
+
+---
 
 At this point, take another look at the three files we've seen so far, `/public/index.html`, `/src/index.js`, and `/src/App.js`. See if you can trace the path that eventually leads to our `App` component rendering to the page.
 
