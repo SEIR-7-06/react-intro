@@ -181,12 +181,12 @@ npm start
 
 We'll want to keep this server running while we are working on our app. You can now view your React app at `http://localhost:3000`! Take a look.
 
-Open your new React app up in your code editor and take a look inside.
+Open your new React app up in your code editor and take a look inside. You'll see a lot of files in here. Many of them are not important for us to uderstand at the moment. We'll just focus on the core pieces.
 
 Along with installing the necessary dependencies, `create-react-app` creates an initial app skeleton that looks like this...
 
 ```bash
-├──README.md
+├──  README.md
 ├──  favicon.ico
 ├──  index.html
 ├──  node_modules
@@ -231,7 +231,7 @@ ReactDOM.render(
 ```
 
 <details>
-  <summary>What is strict mode?</summary>
+  <summary>Hungry for More: What is strict mode?</summary>
 
   The [StrictMode](https://reactjs.org/docs/strict-mode.html) component wrapping our app will perform additional checks and warnings, highlighting potential bugs or misuses or the React library.
 </details>
