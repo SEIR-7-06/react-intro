@@ -236,12 +236,6 @@ ReactDOM.render(
 );
 ```
 
-<details>
-  <summary>Hungry for More: What is strict mode?</summary>
-
-  The [StrictMode](https://reactjs.org/docs/strict-mode.html) component wrapping our app will perform additional checks and warnings, highlighting potential bugs or misuses or the React library.
-</details>
-
 This function call takes two arguments, the component we want to render, and the element on the page that we want to render our component to. This code will take our `<App />` component and render it on the page to the element with the id of "root".
 
 Notice that before we render our `<App />` component to the page, we import it from another file, `App.js`.
@@ -249,6 +243,12 @@ Notice that before we render our `<App />` component to the page, we import it f
 ```javascript
 import App from './App';
 ```
+
+<details>
+  <summary>Hungry for More: What is strict mode?</summary>
+
+  The [StrictMode](https://reactjs.org/docs/strict-mode.html) component wrapping our app will perform additional checks and warnings, highlighting potential bugs or misuses or the React library.
+</details>
 
 ### App.js
 
