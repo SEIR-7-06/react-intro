@@ -619,7 +619,7 @@ When the state of our application changes, React will compare the old version of
 
 * What is a component in React?
 * What benefits do components provide?
-* What is the parent/child relationship of the Recipes App we've created?
+* What is the parent/child relationship in the example we coded in the code along (with Person and Dog components)?
 * How is our React app rendered to the page in the browser?
 * What is JSX?
 * What is the Virtual DOM?
