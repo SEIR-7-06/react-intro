@@ -443,7 +443,7 @@ function App() {
 export default App;
 ```
 
-To render (or call) the `Person` component we simply include it in our JSX inside a set of opening and closing angle brackets. In this way the `Person` component is a child of the `App` component. The `App` component is a parent to the `Person` component. Any time we render the `App` component we will also render the `Person` component.
+To render (or call) the `Person` component we simply include it in our JSX inside a set of opening and closing angle brackets. In this way the `Person` component is a child of the `App` component. The `App` component is a parent to the `Person` component. And likewise, the `Person` component is a child of the `App` component. Any time we render the `App` component we will also render the `Person` component.
 
 ---
 
