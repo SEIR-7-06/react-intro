@@ -469,6 +469,8 @@ function App() {
 export default App;
 ```
 
+Check out your browser now. We now have many `Person`s showing up. Whooaaaa!
+
 ---
 
 ### Multiple Child Components
