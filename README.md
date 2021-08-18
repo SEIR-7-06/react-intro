@@ -3,8 +3,10 @@
 ![react-logo](./images/react-white-logo.png)
 
 ## Learning Objectives
-- Basic parts of a React app
-- React Components
+- An overview of what React is and why it is popular
+- Set up a React application
+- Create components
+- Render components within other components
 - Parent/Child Relationship with React components
 
 [React Documentation](https://reactjs.org/)
