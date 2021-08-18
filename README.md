@@ -9,7 +9,7 @@
 
 [React Documentation](https://reactjs.org/)
 
-## Framing
+<!-- ## Framing -->
 
 <!-- ### What is a Frontend Framework? 
 
@@ -19,19 +19,22 @@
 - There are [many front end frameworks](https://2020.stateofjs.com/en-US/technologies/front-end-frameworks/)  and each go about solving problems of how state is managed, updated, and represented by a view but there are many commonalities.
 - There is a lot of debate over whether frontend frameworks count as frameworks at all -- some people say that they are just libraries and should be referred to as such. -->
 
-### What is React and Why do people like it?
-[React](https://reactjs.org/) is a JavaScript library for building interactive user interfaces.
+## What is React?
 
-With the DOM API (for example, `document.getElementById()`, `document.createElement()`) we had the ability to dynamically interact with the DOM (the Document Object Model), updating content, creating and removing elements on the page, without having to trigger a full page refresh. In this way React will allow us interact with the DOM in an easier and more efficient way.
+[React](https://reactjs.org/) is a powerful JavaScript library for building interactive user interfaces. React allows us to break our front end application into **components**. For now we can think of **components** as small reusable building blocks that will make up the HTML of our application. We can than piece these building blocks together like Lego blocks to build our front end.
 
-As the the front end of your application becomes larger and more complex, trying to manage that complexity with vanilla JavaScript or even jQuery becomes difficult. The JavaScript language alone doesn't provide us with tools to organize our code.
+## Why React?
+<details>
+  With the DOM API (for example, `document.getElementById()`, `document.createElement()`) we had the ability to dynamically interact with the DOM (the Document Object Model), updating content, creating and removing elements on the page, without having to trigger a full page refresh. React will allow us to do the same thing, but in an easier and more efficient way.
 
-React provides powerful tools for organizing our code and managing complexity. With React, the user interface is broken out into reusable building blocks called **components**. We can piece these components together like lego blocks to build scalable user interfaces.
+  As the the front end of your application becomes larger and more complex, trying to manage that complexity with vanilla JavaScript or even jQuery becomes difficult. The JavaScript language alone doesn't provide us with tools to organize our code.
 
-React also performs very efficiently in the browser. If we think back to using server-side templates in the previous units, whenever we wanted to update the data on the page, we needed to refresh the entire page to see our changes. Using the DOM API we could update data on just a part of the page without refreshing the whole page. (for example, `listEl.append(listItemEl)` or `listItemEl.textContent('New content')`)
+  React provides powerful tools for organizing our code and managing complexity. With React, the user interface is broken out into reusable building blocks called **components**. We can piece these components together like lego blocks to build scalable user interfaces.
 
-React takes this efficiency further, using something called the **Virtual DOM**. With the **Virtual DOM** we can update only the parts of the page that need to be update and nothing more. React does this behind the scenes without us having to manage it or worry about it. We will discuss this concept more, later in the lesson.
+  React also performs very efficiently in the browser. If we think back to using server-side templates in the previous units, whenever we wanted to update the data on the page, we needed to refresh the entire page to see our changes. Using the DOM API we could update data on just a part of the page without refreshing the whole page. (for example, `listEl.append(listItemEl)` or `listItemEl.textContent('New content')`)
 
+  React takes this efficiency further, using something called the **Virtual DOM**. With the **Virtual DOM** we can update only the parts of the page that need to be update and nothing more. React does this behind the scenes without us having to manage it or worry about it. We will discuss this concept more, later in the lesson.
+</details>
 
 <!-- JQUERY VERSION ================================================================= -->
 <!-- With jQuery we had the ability to dynamically interact with the DOM, updating content, creating and removing elements on the page, without having to trigger a full page refresh. In this way React will take the place of jQuery.
