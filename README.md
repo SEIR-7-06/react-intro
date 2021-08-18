@@ -530,7 +530,10 @@ That concludes the code along for this lesson. We are starting to get a sense fo
 
 ---
 
-## The Virtual DOM
+## Hungry for More: The Virtual DOM
+
+<details>
+ <summary></summary>
 
 A big benefit of React is that it performs very efficiently in the browser. If we think back to using server-side templates in the previous units, whenever we wanted to update the data on the page, we needed to refresh the entire page to see our changes. In Unit 1, we learned how we could use the DOM API to update data on just a part of the page without refreshing the whole page. (for example, `listEl.append(listItemEl)` or `listItemEl.textContent('New content')`)
 
@@ -542,12 +545,12 @@ When our `index.html` file initially renders in the browser, React, using the DO
 
 Before it appends all that HTML to the page, it will create a giant JavaScript object representing all of the markup in the app and hold that JavaScript object in the browser's memory. This giant JavaScript object is a virtual representation of the DOM, the **Virtual DOM**.
 
-In our Recipes App, let's say we were to click on a different category. We would want to see the details for that category and see the recipes for that category.
-
 When the state of our application changes, React will compare the old version of our **Virtual DOM** with the new version of our **Virtual DOM**, note the differences, and only render the exact parts of the page that need need to change. We will revisit the concept when we work with **state** in React, but for now, know that the **Virtual DOM** allows React to be highly efficient in how it renders and changes content on the page.
 
 [The React Docs on the Virtual DOM](https://reactjs.org/docs/faq-internals.html#what-is-the-virtual-dom)
 
+</details>
+ 
 ## Review
 
 * What is a component in React?
