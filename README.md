@@ -25,8 +25,9 @@
 
 [React](https://reactjs.org/) is a powerful JavaScript library for building interactive user interfaces. React allows us to break our front end application into **components**. For now we can think of **components** as small reusable building blocks that will make up the HTML of our application. We can than piece these building blocks together like Lego blocks to build our front end.
 
-## Why React?
 <details>
+  <summary>Why React?</summary>
+
   With the DOM API (for example, `document.getElementById()`, `document.createElement()`) we had the ability to dynamically interact with the DOM (the Document Object Model), updating content, creating and removing elements on the page, without having to trigger a full page refresh. React will allow us to do the same thing, but in an easier and more efficient way.
 
   As the the front end of your application becomes larger and more complex, trying to manage that complexity with vanilla JavaScript or even jQuery becomes difficult. The JavaScript language alone doesn't provide us with tools to organize our code.
