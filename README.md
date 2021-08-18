@@ -423,9 +423,9 @@ We simply define a function called Person that returns some JSX.
 
 - Notice how we wrap the JSX code in a set of parentheses. This allows us to put the JSX on a new line after the return and makes it easier to read.
 
-- Notice the export statement which will allow us to import the component into another file.
+- Notice the export statement at the bottom of the file. This will allow us to import the component into another file later on.
 
-Let's navigate back to the `App.js` file. First let's import our new `Person` component into `App.js`. Then let's render our `Person` component inside the `App` component replacing the existing content we had in there.
+Let's navigate back to the `App.js` file. First let's import our new `Person` component into `App.js`. Then let's render our `Person` component inside the `App` component replacing the existing content we had in there. It would look something like this.
 
 ```javascript
 import Person from './components/Person';
