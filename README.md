@@ -277,8 +277,10 @@ Now that our **React component** (function) has been defined we can render it to
 
 Notice that we are also exporting our `App` component. In order to import `App` in our `index.js` file we must first export it from `./src/App.js`.
 
+At this point, take another look at the three files we've seen so far, `/public/index.html`, `/src/index.js`, and `/src/App.js`. See if you can trace the path that eventually leads to our `App` component rendering to the page.
+
 <details>
-  <summary>Hungry for More: How does JSX get converted to JavaScript</summary>
+  <summary>Hungry for More: How does JSX get converted to JavaScript?</summary>
 
   Behind the scenes our `create-react-app` setup is using a tool called "Webpack", which is using another tool called "Babel" to "transpile" this **JSX** into vanilla JavaScript and regular React code before bundling it up and sending it off to the browser.
 
@@ -296,8 +298,6 @@ Notice that we are also exporting our `App` component. In order to import `App` 
   ### What is Webpack?
   Webpack is a module bundler that can be configured to do all sorts of things in order to prepare our front end code into code that is ready to be sent to and read by a browser. For our uses, Webpack will take all of our React and JavaScript code, convert it into vanilla JavaScript, bundle it into a single JavaScript file, and then append it in a script tag to our `index.html` file. We can actually find this script tag by opening up the elements panel with our React app open.
 </details>
-
-At this point, take another look at the three files we've seen so far, `/public/index.html`, `/src/index.js`, and `/src/App.js`. See if you can trace the path that eventually leads to our `App` component rendering to the page.
 
 ## Code Along: Let's Code
 
