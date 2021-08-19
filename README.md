@@ -160,9 +160,7 @@ It is possible to set up a React environment yourself, and many companies will s
 
 In your terminal, navigate to the directory where you would like to create your React app. And then run the following commands.
 ```bash
-$ npx create-react-app my-app
-$ cd my-app
-$ npm start
+npx create-react-app my-app
 ```
 
 The command may take a few minutes to complete depending on your internet connection. `create-react-app` will create a new directory for our React project. For our example it will create a directory called 'my-app'. Inside the directory it will set up our React environment, complete with a server that will serve our React app to the browser.
