@@ -150,7 +150,7 @@ As you're drawing this out, think about the following questions...
 
 ----------------------------
 
-## Code Along: Initial Setup
+# Code Along: Initial Setup
 
 In order to create a new project and get our development environment setup, we are going to use a tool called `create-react-app`.
 
