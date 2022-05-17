@@ -37,43 +37,6 @@ As the the front end of your application becomes larger and more complex, trying
 
 React provides powerful tools for organizing our code and managing complexity. With React, the user interface is broken out into reusable building blocks called **components**. We can piece these components together like lego blocks to build scalable user interfaces.
 
-<!-- JQUERY VERSION ================================================================= -->
-<!-- With jQuery we had the ability to dynamically interact with the DOM, updating content, creating and removing elements on the page, without having to trigger a full page refresh. In this way React will take the place of jQuery.
-
-As the the front end of your application becomes larger and more complex, trying to manage that complexity with vanilla JavaScript or even jQuery becomes difficult. The jQuery library alone doesn't provide us with tools to organize our code.
-
-React provides powerful tools for managing that complexity, giving us tools to organize our code. With React, the user interface is broken out into reusable building blocks called **components**. Each component can house its own logic, manage its own state, and pass information to other **components**.
-
-React also performs very efficiently in the browser. If we think back to using server-side templates in the previous units, whenever we wanted to update the data on the page, we needed to refresh the entire page to see our changes. We could improve this with jQuery by only rerendering part of the page.
-
-React takes this efficiency even further, using something called the **Virtual DOM**, we can rerender only the exact parts of the page that need to be rerendered and nothing more. What is even more beautiful is React handles all of this behind the scenes without us having to manage it. -->
-
-<!-- > **Selling Point:** By modeling small compatible components that focus on just rendering a view, we can move business logic out of the DOM, and therefore improve our app's performance, maintainability, modularity and readability. -->
-
-<!-- TODO: CONSIDER BRINGING THE FACEBOOK HISTORY BACK ON SOME LEVEL -->
-
-<!-- #### Some History
-
-The first thing most people hear about React is "Facebook uses it."
-* First used by Facebook in 2011.
-* Then Instagram in 2012.
-* Went open source in May 2013.
-
-**BEHOLD! The OLD FACEBOOK!**  -->
-
-<!-- *2008*
-
-<img src='https://lh3.googleusercontent.com/d4ypmybEZT8SAOj1efmy9CCkKwNG3Dd-Mv0__FoIsWgK0iWuYWBS4NPHOf71ANpKcx2ElOndGeiDInxm8p-sOMqNXBkPy3y-HsH45lGscqJepxFOYkU1_6BbAw' alt='2008 facebook' width='600px'>
-
-*2020*
-
-<img src="https://cdn.vox-cdn.com/uploads/chorus_asset/file/19819048/News_Feed.jpg" alt="2020 facebook" width="600px"> 
-
-React was born out of Facebook's frustration with the traditional MVC model and how...
-  * Re-rendering something meant re-rendering everything (or just a lot).
-  * That had negative implications on processing power and ultimately user experience, which at times became glitchy and laggy. -->
-
-
 ### React from horse's mouth
 
 If you want to get a taste of what React is all about, [here's an introduction from React.js Conf 2015](https://www.youtube.com/watch?v=KVZ-P-ZI6W4&feature=youtu.be&t=510). Recommend starting around the 8:35 mark and watching until 16:30.
@@ -112,32 +75,6 @@ Using Facebook as an example, you could think of each status post as a **compone
 You could then think of the news feed as a component that contains many of the smaller status post components within it. You could take this further and think of the entire page as a component. The news feed component would be a child of the page component. The sidebar and the header components would be children of the page component as well.
 
 ![facebook news feed](./images/facebook-newsfeed.png)
-
-<!-- 
-[Templates vs Components](https://wanderoak.co/fixed-templates-vs-components/)
-
-![Templates Page](images/templates-page.png)
-![Components Page](images/components-page.png)
-> [WanderOak - Fixed Templates vs. Components](https://wanderoak.co/fixed-templates-vs-components/) -->
-
-
-<!-- Let's see if we can identify the components in the Tube Tracker app below.
-
-![Wireframe](images/wireframe.png)
-![Wireframe with components](images/wireframe_deconstructed.png)
-> [MakeTea - Building Robust Apps with React](http://maketea.co.uk/2014/03/05/building-robust-web-apps-with-react-part-1.html)
-
-Notice the structure of how the various components are nested. 
-```
-- TubeTracker
-    - Network
-        - Line
-    - Predictions
-        - DepartureBoard
-            - Trains
-```
-
-We can say that the entire Tube Tracker app is a component containing both the Network component and the Predictions component. We say that the Network and Predictions components are child components of the TubeTracker component and the TubeTracker component is a parent of the Network and the Predictions components. This parent/child relationship creates a tree-like structure which will become important to us later on. -->
 
 ## Exercise: Identifying Components
 
